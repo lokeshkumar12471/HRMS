@@ -44,7 +44,16 @@
 										<select class="form-control" id="department">
 											<option>Neuro</option>
 											<option>Ortho</option>
-											<option>General</option>
+                                            <option>General</option>
+                                            <option>Cardiology</option>
+                                             <option>Dentistry</option>
+                                              <option>Laboratory</option>
+                                               <option>Pulmonology</option>
+                                                <option>Gynecology</option>
+                                                <option>Gastrology</option>
+                                               <option>Neurology</option>
+                                                <option>Physical rehabilitation</option>
+                                                 <option>Pediatrician</option>
 										</select>
 									</div>
 									<div class="form-group col-md-6">

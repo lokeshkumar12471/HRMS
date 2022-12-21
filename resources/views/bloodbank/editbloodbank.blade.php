@@ -3,7 +3,7 @@
 			<!-- Page Title -->
 			<div class="row no-margin-padding">
 				<div class="col-md-6">
-					<h3 class="block-title">Edit Appointment</h3>
+					<h3 class="block-title">Edit BloodBank</h3>
 				</div>
 				<div class="col-md-6">
 					<ol class="breadcrumb">
@@ -12,8 +12,8 @@
 								<span class="ti-home"></span>
 							</a>
                         </li>
-                        <li class="breadcrumb-item">Appointments</li>
-						<li class="breadcrumb-item active">Edit Appointment</li>
+                        <li class="breadcrumb-item">BloodBanks</li>
+						<li class="breadcrumb-item active">Edit BloodBank</li>
 					</ol>
 				</div>
 			</div>
@@ -27,7 +27,7 @@
 					<!-- Widget Item -->
 					<div class="col-md-12">
 						<div class="widget-area-2 proclinic-box-shadow">
-							<h3 class="widget-title">Edit Appointment</h3>
+							<h3 class="widget-title">Edit BloodBank</h3>
 							<form>
 								<div class="form-row">
 									<div class="form-group col-md-6">
@@ -56,8 +56,8 @@
 										<input type="text" value="Dr Kiran Sharma" placeholder="Doctor Name" class="form-control" id="doctor-name">
 									</div>
 									<div class="form-group col-md-6">
-										<label for="appointment-date">Appointment Date</label>
-										<input type="date" value="2018-11-12" placeholder="Appointment Date" class="form-control" id="appointment-date">
+										<label for="bloodbank-date">BloodBank Date</label>
+										<input type="date" value="2018-11-12" placeholder="BloodBank Date" class="form-control" id="bloodbank-date">
 									</div>
 									<div class="form-group col-md-6">
 										<label for="time-slot">Time Slot</label>
@@ -97,7 +97,7 @@
 							</form>
 							<!-- Alerts-->
 							<div class="alert alert-success alert-dismissible fade show" role="alert">
-								<strong>Successfully Updated!</strong> Appointment updated
+								<strong>Successfully Updated!</strong> BloodBank updated
 								<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 									<span aria-hidden="true">×</span>
 								</button>

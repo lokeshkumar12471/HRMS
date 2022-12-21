@@ -5,7 +5,7 @@
 			</div>
 			<ul class="list-unstyled components">
 				<li class="active">
-					<a href="#nav-dashboard" data-toggle="collapse" aria-expanded="#">
+					<a href="{{route('dashboard') }}"  aria-expanded="#">
 						<span class="ti-home"></span> Dashboard
 					</a>
 				</li>
@@ -66,6 +66,44 @@
 						</li>
 					</ul>
 				</li>
+                <li>
+					<a href="#nav-bloodbanks" data-toggle="collapse" aria-expanded="false">
+						<span class="ti-medall"></span> BloodBanks
+					</a>
+					<ul class="collapse list-unstyled" id="nav-bloodbanks">
+						<li>
+							<a href="{{ route('addbloodbank') }}">Add BloodBank</a>
+						</li>
+						<li>
+							<a href="{{ route('allbloodbanks') }}">All BloodBanks</a>
+						</li>
+						<li>
+							<a href="{{ route('bloodbankdetails') }}">BloodBank Details</a>
+						</li>
+						<li>
+							<a href="{{ route('editbloodbank') }}">Edit BloodBank</a>
+						</li>
+					</ul>
+				</li>
+                <li>
+					<a href="#nav-pharmacy" data-toggle="collapse" aria-expanded="false">
+						<span class="ti-write"></span> Pharmacy
+					</a>
+					<ul class="collapse list-unstyled" id="nav-pharmacy">
+						<li>
+							<a href="{{ route('addpharmacy') }}">Add Pharmacy</a>
+						</li>
+						<li>
+							<a href="{{ route('allpharmacies') }}">All Pharmacies</a>
+						</li>
+						<li>
+							<a href="{{ route('pharmacydetails') }}">Pharmacy Details</a>
+						</li>
+						<li>
+							<a href="{{ route('editpharmacy') }}">Edit Pharmacy</a>
+						</li>
+					</ul>
+				</li>
 				<li>
 					<a href="#nav-payment" data-toggle="collapse" aria-expanded="false">
 						<span class="ti-money"></span> Payments
@@ -93,8 +131,30 @@
 						<li>
 							<a href="{{ route('allrooms') }}">All Rooms</a>
 						</li>
+                        	<li>
+							<a href="{{ route('roomtype') }}">Room Type</a>
+						</li>
 						<li>
 							<a href="{{ route('editroomallotment') }}">Edit Room Allotment</a>
+						</li>
+					</ul>
+				</li>
+                <li>
+					<a href="#nav-department" data-toggle="collapse" aria-expanded="false">
+						<span class="ti-folder"></span> Departments
+					</a>
+					<ul class="collapse list-unstyled" id="nav-department">
+						<li>
+							<a href="{{ route('adddepartment') }}">Add Department</a>
+						</li>
+						<li>
+							<a href="{{ route('alldepartments') }}">All Departments</a>
+						</li>
+						<li>
+							<a href="{{ route('departmentdetails') }}">Department Details</a>
+						</li>
+						<li>
+							<a href="{{ route('editdepartment') }}">Edit Department</a>
 						</li>
 					</ul>
 				</li>

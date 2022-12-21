@@ -19,7 +19,6 @@
 				</div>
 			</div>
 			<!-- /Page Title -->
-
 			<!-- /Breadcrumb -->
 			<!-- Main Content -->
 			<div class="container-fluid">
@@ -41,6 +40,12 @@
 											<option>ICU</option>
 											<option>General</option>
 											<option>AC Room</option>
+                                            <option>Twin Sharing Room</option>
+											<option>Single Room</option>
+											<option>Single Deluxe Room</option>
+                                            <option>Super Deluxe Room</option>
+                                            <option>Suite</option>
+                                            <option>Multibed Ward</option>
 										</select>
 									</div>
 									<div class="form-group col-md-6">

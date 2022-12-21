@@ -15,4 +15,7 @@ class RoomAllotmentsController extends Controller
     public function editroomallotment(){
         return view('roomallotments.editroomallotment');
     }
+        public function roomtype(){
+        return view('roomallotments.roomtype');
+    }
 }
