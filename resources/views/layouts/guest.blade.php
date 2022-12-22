@@ -6,24 +6,24 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>ProClinic-Bootstrap4 Hospital Admin</title>
 	<!-- Fav  Icon Link -->
-	<link rel="shortcut icon" type="image/png" href="images/fav.png">
+	<link rel="shortcut icon" type="image/png" href="{{asset('images/fav.png')}}">
 	<!-- Bootstrap core CSS -->
-	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
 	<!-- themify icons CSS -->
-	<link rel="stylesheet" href="css/themify-icons.css">
+	<link rel="stylesheet" href="{{asset('css/themify-icons.css')}}">
 	<!-- Animations CSS -->
-	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="{{asset('css/animate.css')}}">
 	<!-- Main CSS -->
-	<link rel="stylesheet" href="css/styles.css">
-	<link rel="stylesheet" href="css/red.css" id="style_theme">
-	<link rel="stylesheet" href="css/responsive.css">
+	<link rel="stylesheet" href="{{asset('css/styles.css')}}">
+	<link rel="stylesheet" href="{{asset('css/red.css')}}" id="style_theme">
+	<link rel="stylesheet" href="{{asset('css/responsive.css')}}">
 	<!-- morris charts -->
-	<link rel="stylesheet" href="charts/css/morris.css">
+	<link rel="stylesheet" href="{{asset('charts/css/morris.css')}}">
 
 	<!-- jvectormap -->
-	<link rel="stylesheet" href="css/jquery-jvectormap.css">
-    <link rel="stylesheet" href="datatable/dataTables.bootstrap4.min.css">
-	<script src="js/modernizr.min.js"></script>
+	<link rel="stylesheet" href="{{asset('css/jquery-jvectormap.css')}}">
+    <link rel="stylesheet" href="{{asset('datatable/dataTables.bootstrap4.min.css')}}">
+	<script src="{{asset('js/modernizr.min.js')}}"></script>
 </head>
 <body>
     <!-- Pre Loader -->
@@ -59,24 +59,24 @@
 		<span class="ti-angle-up"></span>
 	</a>
     <!-- Jquery Library-->
-	<script src="js/jquery-3.2.1.min.js"></script>
+	<script src="{{asset('js/jquery-3.2.1.min.js')}}"></script>
 	<!-- Popper Library-->
-	<script src="js/popper.min.js"></script>
+	<script src="{{asset('js/popper.min.js')}}"></script>
 	<!-- Bootstrap Library-->
-	<script src="js/bootstrap.min.js"></script>
+	<script src="{{asset('js/bootstrap.min.js')}}"></script>
 	<!-- morris charts -->
-	<script src="charts/js/raphael-min.js"></script>
-	<script src="charts/js/morris.min.js"></script>
-	<script src="js/custom-morris.js"></script>
+	<script src="{{asset('charts/js/raphael-min.js')}}"></script>
+	<script src="{{asset('charts/js/morris.min.js')}}"></script>
+	<script src="{{asset('js/custom-morris.js')}}"></script>
 
 
     <!-- Custom Script-->
-	<script src="js/custom.js"></script>
-	<script src="js/custom-datatables.js"></script>
+	<script src="{{asset('js/custom.js')}}"></script>
+	<script src="{{asset('js/custom-datatables.js')}}"></script>
 
 
      <!-- Datatable  -->
-	<script src="datatable/jquery.dataTables.min.js"></script>
-	<script src="datatable/dataTables.bootstrap4.min.js"></script>
+	<script src="{{asset('datatable/jquery.dataTables.min.js')}}"></script>
+	<script src="{{asset('datatable/dataTables.bootstrap4.min.js')}}"></script>
 </body>
 </html>

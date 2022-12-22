@@ -2,7 +2,7 @@
        <nav class="navbar navbar-default">
 				<div class="container-fluid">
 					<div class="responsive-logo">
-						<a href="index-2.html"><img src="images/logo-dark.png" class="logo" alt="logo"></a>
+						<a href="index-2.html"><img src="{{asset('images/logo-dark.png')}}" class="logo" alt="logo"></a>
 					</div>
 					<ul class="nav">
 						<li class="nav-item">

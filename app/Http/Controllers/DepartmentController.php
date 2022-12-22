@@ -7,49 +7,41 @@ use Illuminate\Http\Request;
 
 class DepartmentController extends Controller
 {
-    //Frontend Controller
-    public function adddepartment(){
-        return view('departments.adddepartment');
-    }
-     public function alldepartments(){
-        return view('departments.alldepartments');
-    }
-     public function departmentdetails(){
-        return view('departments.departmentdetails');
-    }
-     public function editdepartment(){
-        return view('departments.editdepartment');
-    }
 
-    //BackendController
-     public function index(){
-        $department=Department::orderBy('id','asc')->paginate(10);
-        return view('pages.backend.departments.index',compact('department'));
-    }
-     public function show(){
-        $department=Department::orderBy('id','asc')->paginate(10);
-        return view('pages.backend.departments.create',compact('department'));
-    }
+      public function index(){
+         $department=Department::all();
+
+         return view('departments.alldepartments',compact('department'));
+     }
+      public function create(){
+   $department=Department::all();
+          return view('departments.add_update_department',compact('department'));
+     }
+
       public function store(Request $request){
-       $department=new Department;
-       $department->department_name=$request->department_name;
-       $department->save();
-       return redirect()->route('index')->with('Successfull','Data Successfully Stored');
+
+          $department  = new Department;
+
+            $department->department_name  = $request->department_name;
+
+            $department->save();
+            return redirect()->route('alldepartments')->with('Successfull','Data Successfully Stored');
+
     }
        public function edit($id){
       $department=Department::find($id);
-      return view('pages.backend.departments.edit',compact('department'));
+
+      return view('departments.add_update_department',compact('department'));
     }
      public function update(Request $request,$id){
        $department=Department::find($id);
        $department->department_name=$request->department_name;
          $department->update();
-           return redirect()->route('index')->with('Successfull','Data Successfully Updated');
+           return redirect()->route('alldepartments')->with('Successfull','Data Successfully Updated');
     }
-      public function delete($id){
-       $department=Department::find($id);
-       $department->delete();
-    return redirect()->route('index')->with('Successfull','Data Successfully Updated');
-
-    }
+     public function delete($id){
+      $department=Department::find($id);
+      $department->delete();
+   return redirect()->route('alldepartments')->with('Successfull','Data Successfully Updated');
+   }
 }

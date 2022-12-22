@@ -29,7 +29,7 @@ use Illuminate\Support\Facades\Route;
 
 
 
-// [Frontend Controllers]
+
 
 
 //Dashboard
@@ -42,10 +42,16 @@ Route::get('editpatient',[PatientsController::class,'editpatient'])->name('editp
 Route::get('patientdetails',[PatientsController::class,'patientdetails'])->name('patientdetails');
 
 //Doctors
-Route::get('adddoctor',[DoctorsController::class,'adddoctor'])->name('adddoctor');
-Route::get('alldoctors',[DoctorsController::class,'alldoctors'])->name('alldoctors');
-Route::get('doctordetails',[DoctorsController::class,'doctordetails'])->name('doctordetails');
-Route::get('editdoctor',[DoctorsController::class,'editdoctor'])->name('editdoctor');
+// Route::get('adddoctor',[DoctorsController::class,'adddoctor'])->name('adddoctor');
+// Route::get('alldoctors',[DoctorsController::class,'alldoctors'])->name('alldoctors');
+// Route::get('doctordetails',[DoctorsController::class,'doctordetails'])->name('doctordetails');
+// Route::get('editdoctor',[DoctorsController::class,'editdoctor'])->name('editdoctor');
+Route::get('doctor',[DoctorsController::class,'index'])->name('adddoctor');
+Route::get('doctordisplay',[DoctorsController::class,'create'])->name('doctorcreate');
+Route::post('doctorstore',[DoctorsController::class,'store'])->name('doctorstore');
+Route::get('doctoredit/{id}',[DoctorsController::class,'edit'])->name('doctoredit');
+Route::post('doctorupdate/{id}',[DoctorsController::class,'update'])->name('doctorupdate');
+Route::get('doctordelete/{id}',[DoctorsController::class,'delete'])->name('doctordelete');
 
 //Appointments
 Route::get('addappointment',[AppointmentsController::class,'addappointment'])->name('addappointment');
@@ -76,21 +82,15 @@ Route::get('allrooms',[RoomAllotmentsController::class,'allrooms'])->name('allro
 Route::get('roomtype',[RoomAllotmentsController::class,'roomtype'])->name('roomtype');
 Route::get('editroomallotment',[RoomAllotmentsController::class,'editroomallotment'])->name('editroomallotment');
 
-//Departments
-Route::get('adddepartment',[DepartmentController::class,'adddepartment'])->name('adddepartment');
-Route::get('alldepartments',[DepartmentController::class,'alldepartments'])->name('alldepartments');
-Route::get('departmentdetails',[DepartmentController::class,'departmentdetails'])->name('departmentdetails');
-Route::get('editdepartment',[DepartmentController::class,'editdepartment'])->name('editdepartment');
+// //Departments
+Route::get('departmentcreate',[DepartmentController::class,'create'])->name('departmentcreate');
+Route::get('departmentdisplay',[DepartmentController::class,'index'])->name('alldepartments');
+Route::post('departmentstore',[DepartmentController::class,'store'])->name('departmentstore');
+Route::get('departmentedit/{id}',[DepartmentController::class,'edit'])->name('departmentedit');
+Route::post('departmentupdate/{id}',[DepartmentController::class,'update'])->name('departmentupdate');
+Route::get('departmentdelete/{id}',[DepartmentController::class,'delete'])->name('departmentdelete');
 
 //otherpages
 Route::get('invoice',[InvoiceController::class,'index'])->name('invoice');
 Route::get('login',[InvoiceController::class,'login'])->name('login');
 Route::get('signup',[InvoiceController::class,'signup'])->name('signup');
-
-// [Backend Controllers]
-Route::get('departmentcreate',[DepartmentController::class,'index'])->name('departmentindex');
-Route::get('departmentdisplay',[DepartmentController::class,'show'])->name('departmentcreate');
-Route::get('departmentedit/{id}',[DepartmentController::class,'edit'])->name('departmentedit');
-Route::post('departmentupdate/{id}',[DepartmentController::class,'update'])->name('departmentupdate');
-Route::post('departmentstore',[DepartmentController::class,'store'])->name('departmentstore');
-Route::get('departmentdelete/{id}',[DepartmentController::class,'delete'])->name('departmentdelete');

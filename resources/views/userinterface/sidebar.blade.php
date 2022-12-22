@@ -1,7 +1,7 @@
 <!-- Sidebar -->
 		<nav id="sidebar" class="proclinic-bg">
 			<div class="sidebar-header">
-				<a href="index-2.html"><img src="images/logo.png" class="logo" alt="logo"></a>
+				<a href="index-2.html"><img src="{{asset('images/logo.png')}}" class="logo" alt="logo"></a>
 			</div>
 			<ul class="list-unstyled components">
 				<li class="active">
@@ -36,7 +36,7 @@
 						<li>
 							<a href="{{ route('adddoctor') }}">Add Doctor</a>
 						</li>
-						<li>
+						{{-- <li>
 							<a href="{{ route('alldoctors') }}">All Doctors</a>
 						</li>
 						<li>
@@ -44,7 +44,7 @@
 						</li>
 						<li>
 							<a href="{{ route('editdoctor') }}">Edit Doctor</a>
-						</li>
+						</li> --}}
 					</ul>
 				</li>
 				<li>
@@ -145,16 +145,10 @@
 					</a>
 					<ul class="collapse list-unstyled" id="nav-department">
 						<li>
-							<a href="{{ route('adddepartment') }}">Add Department</a>
+							<a href="{{ route('departmentcreate') }}">Add/Edit Department</a>
 						</li>
 						<li>
 							<a href="{{ route('alldepartments') }}">All Departments</a>
-						</li>
-						<li>
-							<a href="{{ route('departmentdetails') }}">Department Details</a>
-						</li>
-						<li>
-							<a href="{{ route('editdepartment') }}">Edit Department</a>
 						</li>
 					</ul>
 				</li>

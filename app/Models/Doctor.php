@@ -10,17 +10,17 @@ class Doctor extends Model
     use HasFactory;
     protected $fillable=[
               'department_id',
-              'name',
+              'doctor_name',
               'specialization',
-              'age',
-              'doctor_email',
-              'doctor_details',
-              'address',
-              'gender',
-              'phone',
-              'experience',
-              'date_of_birth',
-              'doctor_profile',
-              'role_id',
+                'doctor_age',
+               'doctor_email',
+               'doctor_details',
+               'doctor_address',
+               'doctor_gender',
+               'doctor_phone',
+               'doctor_experience',
+               'doctor_date_of_birth',
+               'doctor_profile',
+                'role_id',
     ];
 }
