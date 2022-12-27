@@ -37,10 +37,17 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
 //Patients
-Route::get('addpatient', [PatientsController::class, 'addpatient'])->name('addpatient');
-Route::get('allpatients', [PatientsController::class, 'allpatients'])->name('allpatients');
-Route::get('editpatient', [PatientsController::class, 'editpatient'])->name('editpatient');
-Route::get('patientdetails', [PatientsController::class, 'patientdetails'])->name('patientdetails');
+Route::get('getpatientbydept',[PatientsController::class,'getpatientbydept'])->name('getpatientbydept');
+Route::get('patientcreate',[PatientsController::class,'index'])->name('patientcreate');
+Route::get('patientdisplay',[PatientsController::class,'create'])->name('allpatients');
+Route::post('patientstore',[PatientsController::class,'store'])->name('patientstore');
+Route::get('patientedit/{id}',[PatientsController::class,'edit'])->name('patientedit');
+Route::post('patientupdate/{id}',[PatientsController::class,'update'])->name('patientupdate');
+Route::post('patientdelete/{id}',[PatientsController::class,'delete'])->name('patientdelete');
+Route::get('patientdetails/{id}', [PatientsController::class, 'patientdetails'])->name('patientdetails');
+
+
+
 
 //Doctors
 Route::get('doctorcreate', [DoctorsController::class, 'index'])->name('doctorcreate');

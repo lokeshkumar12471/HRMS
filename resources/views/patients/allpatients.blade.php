@@ -32,235 +32,48 @@
 								<table id="tableId" class="table table-bordered table-striped">
 									<thead>
 										<tr>
-											<th class="no-sort">
-												<div class="custom-control custom-checkbox">
-													<input class="custom-control-input" type="checkbox" id="select-all">
-													<label class="custom-control-label" for="select-all"></label>
-												</div>
-											</th>
 											<th>Patient ID</th>
+                                            <th>Department Name</th>
+                                            <th>Doctor Name</th>
 											<th>Patient Name</th>
+                                            <th>Patient (DOB)</th>
 											<th>Age</th>
 											<th>Phone</th>
-											<th>last Visit</th>
-											<th>Status</th>
+											<th>Email</th>
+                                            <th>Gender</th>
+                                            <th>Address</th>
+											<th>Patient Profile</th>
+                                            <th>Actions</th>
 										</tr>
 									</thead>
 									<tbody>
+                                        @foreach ($patient as $patients)
 										<tr>
+											<td>{{ $patients->id }}</td>
+                                            <td>{{ $patients->department_id }}</td>
+                                            <td>{{ $patients->doctor_id }}</td>
+											<td>{{ $patients->patient_name }}</td>
+                                            <td>{{ $patients->patient_date_of_birth }}</td>
+                                            <td>{{ $patients->patient_age }}</td>
+                                            <td>{{ $patients->patient_phone }}</td>
+                                            <td>{{ $patients->patient_email }}</td>
+                                            <td>{{ $patients->patient_gender }}</td>
+                                            <td>{{ $patients->patient_address }}</td>
+                                            <td><img src="{{asset('uploads/patient/' . $patients->patient_profile) }}" height="100" width="100"></td>
 											<td>
-												<div class="custom-control custom-checkbox">
-													<input class="custom-control-input" type="checkbox" id="1">
-													<label class="custom-control-label" for="1"></label>
-												</div>
-											</td>
-											<td>1</td>
-											<td>Manoj Kumar</td>
-											<td>30</td>
-											<td>333-444-7777</td>
-											<td>12-03-2018</td>
-											<td>
-												<span class="badge badge-success">Completed</span>
-											</td>
-										</tr>
-										<tr>
-											<td>
-												<div class="custom-control custom-checkbox">
-													<input class="custom-control-input" type="checkbox" id="2">
-													<label class="custom-control-label" for="2"></label>
-												</div>
-											</td>
-											<td>2</td>
-											<td>Riya </td>
-											<td>26</td>
-											<td>3423-232-987</td>
-											<td>12-10-2018</td>
-											<td>
-												<span class="badge badge-warning">Pending</span>
-											</td>
-										</tr>
-										<tr>
-											<td>
-												<div class="custom-control custom-checkbox">
-													<input class="custom-control-input" type="checkbox" id="3">
-													<label class="custom-control-label" for="3"></label>
-												</div>
-											</td>
-											<td>3</td>
-											<td>Paul</td>
-											<td>46</td>
-											<td>3423-132-987</td>
-											<td>45-10-2018</td>
-											<td>
-												<span class="badge badge-danger">Cancelled</span>
-											</td>
-										</tr>
-										<tr>
-											<td>
-												<div class="custom-control custom-checkbox">
-													<input class="custom-control-input" type="checkbox" id="4">
-													<label class="custom-control-label" for="4"></label>
-												</div>
-											</td>
-											<td>4</td>
-											<td>Manoj Kumar</td>
-											<td>30</td>
-											<td>333-444-7777</td>
-											<td>12-03-2018</td>
-											<td>
-												<span class="badge badge-success">Completed</span>
-											</td>
-										</tr>
-										<tr>
-											<td>
-												<div class="custom-control custom-checkbox">
-													<input class="custom-control-input" type="checkbox" id="5">
-													<label class="custom-control-label" for="5"></label>
-												</div>
-											</td>
-											<td>5</td>
-											<td>Riya </td>
-											<td>26</td>
-											<td>3423-232-987</td>
-											<td>12-10-2018</td>
-											<td>
-												<span class="badge badge-warning">Pending</span>
-											</td>
-										</tr>
-										<tr>
-											<td>
-												<div class="custom-control custom-checkbox">
-													<input class="custom-control-input" type="checkbox" id="6">
-													<label class="custom-control-label" for="6"></label>
-												</div>
-											</td>
-											<td>6</td>
-											<td>Paul</td>
-											<td>46</td>
-											<td>3423-132-987</td>
-											<td>45-10-2018</td>
-											<td>
-												<span class="badge badge-danger">Cancelled</span>
-											</td>
-										</tr>
-										<tr>
-											<td>
-												<div class="custom-control custom-checkbox">
-													<input class="custom-control-input" type="checkbox" id="7">
-													<label class="custom-control-label" for="7"></label>
-												</div>
-											</td>
-											<td>7</td>
-											<td>Manoj Kumar</td>
-											<td>30</td>
-											<td>333-444-7777</td>
-											<td>12-03-2018</td>
-											<td>
-												<span class="badge badge-success">Completed</span>
-											</td>
-										</tr>
-										<tr>
-											<td>
-												<div class="custom-control custom-checkbox">
-													<input class="custom-control-input" type="checkbox" id="8">
-													<label class="custom-control-label" for="8"></label>
-												</div>
-											</td>
-											<td>8</td>
-											<td>Riya </td>
-											<td>26</td>
-											<td>3423-232-987</td>
-											<td>12-10-2018</td>
-											<td>
-												<span class="badge badge-warning">Pending</span>
-											</td>
-										</tr>
-										<tr>
-											<td>
-												<div class="custom-control custom-checkbox">
-													<input class="custom-control-input" type="checkbox" id="9">
-													<label class="custom-control-label" for="9"></label>
-												</div>
-											</td>
-											<td>9</td>
-											<td>Paul</td>
-											<td>46</td>
-											<td>3423-132-987</td>
-											<td>45-10-2018</td>
-											<td>
-												<span class="badge badge-danger">Cancelled</span>
-											</td>
-										</tr>
-										<tr>
-											<td>
-												<div class="custom-control custom-checkbox">
-													<input class="custom-control-input" type="checkbox" id="10">
-													<label class="custom-control-label" for="10"></label>
-												</div>
-											</td>
-											<td>10</td>
-											<td>Manoj Kumar</td>
-											<td>30</td>
-											<td>333-444-7777</td>
-											<td>12-03-2018</td>
-											<td>
-												<span class="badge badge-success">Completed</span>
-											</td>
-										</tr>
-										<tr>
-											<td>
-												<div class="custom-control custom-checkbox">
-													<input class="custom-control-input" type="checkbox" id="11">
-													<label class="custom-control-label" for="11"></label>
-												</div>
-											</td>
-											<td>11</td>
-											<td>Riya </td>
-											<td>26</td>
-											<td>3423-232-987</td>
-											<td>12-10-2018</td>
-											<td>
-												<span class="badge badge-warning">Pending</span>
-											</td>
-										</tr>
-										<tr>
-											<td>
-												<div class="custom-control custom-checkbox">
-													<input class="custom-control-input" type="checkbox" id="12">
-													<label class="custom-control-label" for="12"></label>
-												</div>
-											</td>
-											<td>12</td>
-											<td>Paul</td>
-											<td>46</td>
-											<td>3423-132-987</td>
-											<td>45-10-2018</td>
-											<td>
-												<span class="badge badge-danger">Cancelled</span>
-											</td>
+                                                   <a href="{{ route('patientdetails', $patients->id) }}"><button type="button"
+                                                    class="btn btn-primary mt-3 mb-0"><span class="ti-pencil-alt"></span>
+                                                    History</button></a><a href="{{ route('patientdelete',  $patients->id) }}"><button type="button"
+                                                    class="btn btn-danger mt-3 mb-0"><span class="ti-trash"></span>
+                                                    DELETE</button></a>
+                                            <a href="{{ route('patientedit', $patients->id) }}"><button type="button"
+                                                    class="btn btn-success mt-3 mb-0"><span class="ti-pencil-alt"></span>
+                                                    EDIT</button></a>
+                                        </td>
+                                            @endforeach
 										</tr>
 									</tbody>
 								</table>
-								<!--Export links-->
-								<nav aria-label="Page navigation example">
-									<ul class="pagination justify-content-center export-pagination">
-										<li class="page-item">
-											<a class="page-link" href="#"><span class="ti-download"></span> csv</a>
-										</li>
-										<li class="page-item">
-											<a class="page-link" href="#"><span class="ti-printer"></span>  print</a>
-										</li>
-										<li class="page-item">
-											<a class="page-link" href="#"><span class="ti-file"></span> PDF</a>
-										</li>
-										<li class="page-item">
-											<a class="page-link" href="#"><span class="ti-align-justify"></span> Excel</a>
-										</li>
-									</ul>
-								</nav>
-								<!-- /Export links-->
-								<button type="button" class="btn btn-danger mt-3 mb-0"><span class="ti-trash"></span> DELETE</button>
-								<button type="button" class="btn btn-primary mt-3 mb-0"><span class="ti-pencil-alt"></span> EDIT</button>
 							</div>
 						</div>
 					</div>

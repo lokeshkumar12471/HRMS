@@ -3,7 +3,11 @@
     <!-- Page Title -->
     <div class="row no-margin-padding">
         <div class="col-md-6">
-            <h3 class="block-title">Add Doctor</h3>
+              @if (isset($doctor->id)!='')
+                        <h3 class="block-title">Update Doctor</h3>
+                    @else
+                        <h3 class="block-title">Add Doctor</h3>
+                    @endif
         </div>
         <div class="col-md-6">
             <ol class="breadcrumb">
@@ -13,7 +17,11 @@
                     </a>
                 </li>
                 <li class="breadcrumb-item">Doctors</li>
-                <li class="breadcrumb-item active">Add Doctor</li>
+                  @if (isset($doctor->id)!='')
+                        <li class="breadcrumb-item active">Update Doctor</li>
+                    @else
+                        <li class="breadcrumb-item active">Add Doctor</li>
+                    @endif
             </ol>
         </div>
     </div>
@@ -27,7 +35,7 @@
             <!-- Widget Item -->
             <div class="col-md-12">
                 <div class="widget-area-2 proclinic-box-shadow">
-                    @if (isset($doctor->id) != '')
+                    @if (isset($doctor->id)!='')
                         <h3 class="widget-title">Update Doctor</h3>
                     @else
                         <h3 class="widget-title">Add Doctor</h3>
@@ -99,6 +107,7 @@
                             <div class="form-group col-md-6">
                                 <label for="gender">Gender</label>
                                 <select class="form-control" name="doctor_gender" id="gender">
+                                    <option value="">Select Option</option>
                                     @if (isset($doctor->id) != '')
                                         value="{{ $doctor->doctor_gender }}"
                                     @endif
@@ -107,16 +116,16 @@
                                     <option>Other</option>
                                 </select>
                             </div>
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-12">
                                 <label for="about-doctor">Doctor Details</label>
-                                <textarea placeholder="Doctor Details" name="doctor_details" class="form-control" id="about-doctor" rows="3">
+                                <textarea placeholder="Doctor_Details" name="doctor_details" class="form-control" id="about-doctor" rows="3">
                                     @if (isset($doctor->id) != '')
 {{ $doctor->doctor_details }}
 @endif
 </textarea>
 
                             </div>
-                            <div class="form-group col-md-6">
+                            <div class="form-group col-md-12">
                                 <label for="address">Address</label>
                                 <textarea placeholder="Address" name="doctor_address" class="form-control" id="address" rows="3"> @if (isset($doctor->id) != '')
 {{ $doctor->doctor_address }}
@@ -131,9 +140,13 @@
                                     <img src="{{ asset('uploads/doctor/' . $doctor->doctor_profile) }}"
                                                 height="100" width="100"> @endif
                                     </div>
-                                <div class="form-group col-md-6 mb-3">
-                                    <button type="submit" class="btn btn-primary btn-lg">Submit</button>
-                                </div>
+                                    <div class="form-group col-md-6 mb-3">
+                                      @if (isset($doctor->id)!='')
+                        <button type="submit" class="btn btn-primary btn-lg">Update</button>
+                    @else
+                      <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                    @endif
+                                    </div>
                             </div>
                     </form>
                 </div>

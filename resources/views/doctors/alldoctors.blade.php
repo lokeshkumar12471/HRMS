@@ -55,7 +55,6 @@
                                         <td>{{ $doctors->id }}</td>
                                         <td>{{ $doctors->doctor_name }}</td>
                                         <td>{{ $doctors->department_id }}</td>
-
                                         <td>{{ $doctors->doctor_date_of_birth }}</td>
                                         <td>{{ $doctors->specialization }}</td>
                                         <td>{{ $doctors->doctor_experience }}</td>
@@ -68,12 +67,11 @@
                                         <td><img src="{{ asset('uploads/doctor/' . $doctors->doctor_profile) }}"
                                                 height="100" width="100"></td>
 
-
                                         <td><a href="{{ route('doctordelete', $doctors->id) }}"><button type="button"
                                                     class="btn btn-danger mt-3 mb-0"><span class="ti-trash"></span>
                                                     DELETE</button></a>
                                             <a href="{{ route('doctoredit', $doctors->id) }}"><button type="button"
-                                                    class="btn btn-success mt-3 mb-0"><span class="ti-trash"></span>
+                                                    class="btn btn-success mt-3 mb-0"><span class="ti-pencil-alt"></span>
                                                     EDIT</button></a>
                                         </td>
 

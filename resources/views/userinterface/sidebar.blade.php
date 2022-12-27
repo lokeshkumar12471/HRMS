@@ -10,23 +10,9 @@
             </a>
         </li>
         <li>
-            <a href="#nav-patients" data-toggle="collapse" aria-expanded="false">
+            <a href="{{  route('allpatients') }}"  aria-expanded="#">
                 <span class="ti-wheelchair"></span> Patients
             </a>
-            <ul class="collapse list-unstyled" id="nav-patients">
-                <li>
-                    <a href="{{ route('addpatient') }}">Add Patient</a>
-                </li>
-                <li>
-                    <a href="{{ route('allpatients') }}">All Patients</a>
-                </li>
-                <li>
-                    <a href="{{ route('patientdetails') }}">Patient Details</a>
-                </li>
-                <li>
-                    <a href="{{ route('editpatient') }}">Edit Patient</a>
-                </li>
-            </ul>
         </li>
         <li>
             <a href="{{ route('alldoctors') }}" aria-expanded="#">

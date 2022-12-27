@@ -31,53 +31,36 @@
 							<div class="table-responsive">
 								<table class="table table-bordered">
 									<tbody>
+
+
 										<tr>
 											<td><strong>Name</strong></td>
-											<td>Daniel Smith</td>
+											<td>{{$patients->patient_name}}</td>
 										</tr>
 										<tr>
 											<td><strong>Date Of Birth</strong> </td>
-											<td>26-10-1989</td>
+												<td>{{$patients->patient_date_of_birth}}</td>
 										</tr>
 										<tr>
 											<td><strong>Gender</strong></td>
-											<td>Male</td>
+											<td>{{ $patients->patient_gender }}</td>
 										</tr>
 										<tr>
 											<td><strong>Address</strong></td>
-											<td>Koramangala
-                                                Banglore, India</td>
+											<td>{{ $patients->patient_address }}</td>
 										</tr>
 										<tr>
 											<td><strong>Phone </strong></td>
-											<td>+91 11111 11111</td>
+											<td>{{ $patients->patient_phone }}</td>
 										</tr>
 										<tr>
 											<td><strong>Email</strong></td>
-											<td>your@email.com</td>
+											<td>{{ $patients->patient_email }}</td>
                                         </tr>
+
 									</tbody>
 								</table>
 							</div>
-
-								<!--Export links-->
-								<nav aria-label="Page navigation example">
-									<ul class="pagination justify-content-center export-pagination">
-										<li class="page-item">
-											<a class="page-link" href="#"><span class="ti-download"></span> csv</a>
-										</li>
-										<li class="page-item">
-											<a class="page-link" href="#"><span class="ti-printer"></span>  print</a>
-										</li>
-										<li class="page-item">
-											<a class="page-link" href="#"><span class="ti-file"></span> PDF</a>
-										</li>
-										<li class="page-item">
-											<a class="page-link" href="#"><span class="ti-align-justify"></span> Excel</a>
-										</li>
-									</ul>
-								</nav>
-								<!-- /Export links-->
                             <button type="button" class="btn btn-success mb-3"><span class="ti-pencil-alt"></span> Edit Patient</button>
                             <button type="button" class="btn btn-danger mb-3"><span class="ti-trash"></span> Delete Patient</button>
                             <button type="button" class="btn btn-info mb-3"><span class="ti-arrow-down"></span> Download File</button>
@@ -137,25 +120,6 @@
 										</tr>
 									</tbody>
 								</table>
-
-								<!--Export links-->
-								<nav aria-label="Page navigation example">
-									<ul class="pagination justify-content-center export-pagination">
-										<li class="page-item">
-											<a class="page-link" href="#"><span class="ti-download"></span> csv</a>
-										</li>
-										<li class="page-item">
-											<a class="page-link" href="#"><span class="ti-printer"></span>  print</a>
-										</li>
-										<li class="page-item">
-											<a class="page-link" href="#"><span class="ti-file"></span> PDF</a>
-										</li>
-										<li class="page-item">
-											<a class="page-link" href="#"><span class="ti-align-justify"></span> Excel</a>
-										</li>
-									</ul>
-								</nav>
-								<!-- /Export links-->
 							</div>
 						</div>
 					</div>

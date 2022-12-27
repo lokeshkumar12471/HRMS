@@ -47,7 +47,7 @@
                                                 type="button" class="btn btn-danger mt-3 mb-0"><span
                                                     class="ti-trash"></span> DELETE</button></a>
                                         <a href="{{ route('departmentedit', $departments->id) }}"><button type="button"
-                                                class="btn btn-success mt-3 mb-0"><span class="ti-trash"></span>
+                                                class="btn btn-success mt-3 mb-0"><span class="ti-pencil-alt"></span>
                                                 EDIT</button></a>
                                     </td>
                                     </tr>

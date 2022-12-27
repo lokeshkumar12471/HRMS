@@ -55,10 +55,32 @@
 										<label for="doctor-name">Doctor Name</label>
 										<input type="text" placeholder="Doctor Name" class="form-control" id="doctor-name">
 									</div>
+
+                                    	<div class="form-group col-md-6">
+										<label for="doctor-name">Patient Name</label>
+										<input type="text" name="patient_name" placeholder="Patient Name" class="form-control" id="doctor-name">
+									</div>
+
+                                    	<div class="form-group col-md-6">
+										<label for="patient_date_of_birth">Date Of Birth</label>
+										<input type="date" name="patient_date_of_birth" placeholder="date_of_birth" class="form-control" id="doctor-name">
+									</div>
+
 									<div class="form-group col-md-6">
 										<label for="appointment-date">Appointment Date</label>
 										<input type="date" placeholder="Appointment Date" class="form-control" id="appointment-date">
 									</div>
+
+                                    <div class="form-group col-md-6">
+										<label for="patient_date_of_birth">Phone</label>
+										<input type="text" name="patient_date_of_birth" placeholder="date_of_birth" class="form-control" id="doctor-name">
+									</div>
+
+                                    <div class="form-group col-md-6">
+										<label for="patient_date_of_birth">Email</label>
+										<input type="email" name="patient_date_of_birth" placeholder="date_of_birth" class="form-control" id="doctor-name">
+									</div>
+
 									<div class="form-group col-md-6">
 										<label for="time-slot">Time Slot</label>
 										<select class="form-control" id="time-slot">
