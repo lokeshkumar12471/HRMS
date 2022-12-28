@@ -30,9 +30,9 @@
                 <li>
                     <a href="{{ route('allappointments') }}">All Appointments</a>
                 </li>
-                <li>
+                {{-- <li>
                     <a href="{{ route('appointmentdetails') }}">Appointment Details</a>
-                </li>
+                </li> --}}
                 <li>
                     <a href="{{ route('editappointment') }}">Edit Appointment</a>
                 </li>

@@ -24,6 +24,7 @@ class CreatePatientsTable extends Migration
      $table->string('patient_email');
      $table->string('patient_gender');
      $table->string('patient_address');
+     $table->string('patient_problem');
      $table->string('patient_profile');
      $table->integer('role_id');
     $table->timestamps();

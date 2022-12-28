@@ -32,236 +32,43 @@
 								<table id="tableId" class="table table-bordered table-striped">
 									<thead>
 										<tr>
-											<th class="no-sort">
-												<div class="custom-control custom-checkbox">
-													<input class="custom-control-input" type="checkbox" id="select-all">
-													<label class="custom-control-label" for="select-all"></label>
-												</div>
-											</th>
-											<th>Appointment ID</th>
-											<th>Patient ID</th>
-											<th>Token Number</th>
+											<th>Department ID</th>
 											<th>Doctor Name</th>
-											<th>Problem</th>
-											<th>Status</th>
+											<th>Patient Name</th>
+											<th>Date Of Birth</th>
+											<th>Appointment Date</th>
+											<th>Phone</th>
+                                            <th>Age</th>
+                                            <th>Email</th>
+                                            <th>Time Slot</th>
+                                            <th>Gender</th>
+                                            <th>Address</th>
+                                            <th>Token Number</th>
+                                            <th>Problem</th>
+                                             <th>Action</th>
 										</tr>
 									</thead>
 									<tbody>
 										<tr>
-											<td>
-												<div class="custom-control custom-checkbox">
-													<input class="custom-control-input" type="checkbox" id="1">
-													<label class="custom-control-label" for="1"></label>
-												</div>
-											</td>
-											<td>AP872</td>
-											<td>P12Y</td>
-											<td>58</td>
-											<td>Dr Manoj</td>
-											<td>Small knee fracture</td>
-											<td>
-												<span class="badge badge-success">Active</span>
-											</td>
+                                            @foreach ($appointment as $appointments)
+											<td>{{$appointments->department_id }}</td>
+                                            <td>{{ $appointments->doctor_id }}</td>
+											<td>{{ $appointments->appointment_name }}</td>
+											<td>{{ $appointments->appointment_date_of_birth }}</td>
+                                            <td>{{ $appointments->appointment_date }}</td>
+											<td>{{ $appointments->appointment_phone }}</td>
+                                            <td>{{ $appointments->appointment_age }}</td>
+											<td>{{ $appointments->appointment_email }}</td>
+											<td>{{ $appointments->appointment_time_slot }}</td>
+                                            <td>{{ $appointments->appointment_gender }}</td>
+											<td>{{ $appointments->appointment_address }}</td>
+											<td>{{ $appointments->appointment_token_number }}</td>
+											<td>{{ $appointments->appointment_problem }}</td>
+											<td><a href="{{ route('appointmentdetails', $appointments->id) }}" ><button type="button" class="btn btn-danger mt-3 mb-0">View</button></a></td>
                                         </tr>
-                                        <tr>
-											<td>
-												<div class="custom-control custom-checkbox">
-													<input class="custom-control-input" type="checkbox" id="2">
-													<label class="custom-control-label" for="2"></label>
-												</div>
-											</td>
-											<td>AP8W72</td>
-											<td>P42Y</td>
-											<td>5</td>
-											<td>Dr Daniel</td>
-											<td>Viral Fever</td>
-											<td>
-												<span class="badge badge-success">Active</span>
-											</td>
-                                        </tr>
-                                        <tr>
-											<td>
-												<div class="custom-control custom-checkbox">
-													<input class="custom-control-input" type="checkbox" id="3">
-													<label class="custom-control-label" for="3"></label>
-												</div>
-											</td>
-											<td>AP873</td>
-											<td>P12G</td>
-											<td>8</td>
-											<td>Dr Manoj</td>
-											<td>-</td>
-											<td>
-												<span class="badge badge-warning">Pending</span>
-											</td>
-                                        </tr>
-                                        <tr>
-											<td>
-												<div class="custom-control custom-checkbox">
-													<input class="custom-control-input" type="checkbox" id="4">
-													<label class="custom-control-label" for="4"></label>
-												</div>
-											</td>
-											<td>APY72</td>
-											<td>P1DY</td>
-											<td>18</td>
-											<td>Dr Susan</td>
-											<td>Chest pain</td>
-											<td>
-												<span class="badge badge-success">Active</span>
-											</td>
-                                        </tr>
-                                        <tr>
-											<td>
-												<div class="custom-control custom-checkbox">
-													<input class="custom-control-input" type="checkbox" id="5">
-													<label class="custom-control-label" for="5"></label>
-												</div>
-											</td>
-											<td>AP872</td>
-											<td>P12Y</td>
-											<td>58</td>
-											<td>Dr Manoj</td>
-											<td>Small knee fracture</td>
-											<td>
-												<span class="badge badge-success">Active</span>
-											</td>
-                                        </tr>
-                                        <tr>
-											<td>
-												<div class="custom-control custom-checkbox">
-													<input class="custom-control-input" type="checkbox" id="6">
-													<label class="custom-control-label" for="6"></label>
-												</div>
-											</td>
-											<td>AP8W72</td>
-											<td>P42Y</td>
-											<td>5</td>
-											<td>Dr Daniel</td>
-											<td>Viral Fever</td>
-											<td>
-												<span class="badge badge-success">Active</span>
-											</td>
-                                        </tr>
-                                        <tr>
-											<td>
-												<div class="custom-control custom-checkbox">
-													<input class="custom-control-input" type="checkbox" id="7">
-													<label class="custom-control-label" for="7"></label>
-												</div>
-											</td>
-											<td>AP873</td>
-											<td>P12G</td>
-											<td>8</td>
-											<td>Dr Manoj</td>
-											<td>-</td>
-											<td>
-												<span class="badge badge-warning">Pending</span>
-											</td>
-                                        </tr>
-                                        <tr>
-											<td>
-												<div class="custom-control custom-checkbox">
-													<input class="custom-control-input" type="checkbox" id="8">
-													<label class="custom-control-label" for="8"></label>
-												</div>
-											</td>
-											<td>APY72</td>
-											<td>P1DY</td>
-											<td>18</td>
-											<td>Dr Susan</td>
-											<td>Chest pain</td>
-											<td>
-												<span class="badge badge-success">Active</span>
-											</td>
-                                        </tr>
-                                        <tr>
-											<td>
-												<div class="custom-control custom-checkbox">
-													<input class="custom-control-input" type="checkbox" id="9">
-													<label class="custom-control-label" for="9"></label>
-												</div>
-											</td>
-											<td>AP872</td>
-											<td>P12Y</td>
-											<td>58</td>
-											<td>Dr Manoj</td>
-											<td>Small knee fracture</td>
-											<td>
-												<span class="badge badge-success">Active</span>
-											</td>
-                                        </tr>
-                                        <tr>
-											<td>
-												<div class="custom-control custom-checkbox">
-													<input class="custom-control-input" type="checkbox" id="10">
-													<label class="custom-control-label" for="10"></label>
-												</div>
-											</td>
-											<td>AP8W72</td>
-											<td>P42Y</td>
-											<td>5</td>
-											<td>Dr Daniel</td>
-											<td>Viral Fever</td>
-											<td>
-												<span class="badge badge-success">Active</span>
-											</td>
-                                        </tr>
-                                        <tr>
-											<td>
-												<div class="custom-control custom-checkbox">
-													<input class="custom-control-input" type="checkbox" id="11">
-													<label class="custom-control-label" for="11"></label>
-												</div>
-											</td>
-											<td>AP873</td>
-											<td>P12G</td>
-											<td>8</td>
-											<td>Dr Manoj</td>
-											<td>-</td>
-											<td>
-												<span class="badge badge-warning">Pending</span>
-											</td>
-                                        </tr>
-                                        <tr>
-											<td>
-												<div class="custom-control custom-checkbox">
-													<input class="custom-control-input" type="checkbox" id="12">
-													<label class="custom-control-label" for="12"></label>
-												</div>
-											</td>
-											<td>APY72</td>
-											<td>P1DY</td>
-											<td>18</td>
-											<td>Dr Susan</td>
-											<td>Chest pain</td>
-											<td>
-												<span class="badge badge-success">Active</span>
-											</td>
-										</tr>
+                                        @endforeach
 									</tbody>
                                 </table>
-
-								<!--Export links-->
-								<nav aria-label="Page navigation example">
-									<ul class="pagination justify-content-center export-pagination">
-										<li class="page-item">
-											<a class="page-link" href="#"><span class="ti-download"></span> csv</a>
-										</li>
-										<li class="page-item">
-											<a class="page-link" href="#"><span class="ti-printer"></span>  print</a>
-										</li>
-										<li class="page-item">
-											<a class="page-link" href="#"><span class="ti-file"></span> PDF</a>
-										</li>
-										<li class="page-item">
-											<a class="page-link" href="#"><span class="ti-align-justify"></span> Excel</a>
-										</li>
-									</ul>
-								</nav>
-								<!-- /Export links-->
-								<button type="button" class="btn btn-danger mt-3 mb-0"><span class="ti-trash"></span> DELETE</button>
-								<button type="button" class="btn btn-primary mt-3 mb-0"><span class="ti-pencil-alt"></span> EDIT</button>
 							</div>
 						</div>
 					</div>

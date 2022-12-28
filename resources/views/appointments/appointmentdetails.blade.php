@@ -33,53 +33,34 @@
                                     <tbody>
                                         <tr>
                                             <td><strong>Patient ID</strong></td>
-                                            <td>PT56</td>
+                                            <td>{{ $appointment->appointment_name}}</td>
                                         </tr>
                                         <tr>
                                             <td><strong>Department</strong></td>
-                                            <td>Dental</td>
+                                            <td>{{ $department->department_name }}</td>
                                         </tr>
                                         <tr>
                                             <td><strong>Doctor Name</strong></td>
-                                            <td>Dr Kiran Sharma</td>
+                                            <td>{{ $doctor->doctor_name }}</td>
                                         </tr>
                                         <tr>
                                             <td><strong>Appointment Date</strong></td>
-                                            <td>16-nov-2018</td>
+                                            <td>{{ $appointment->appointment_date }}</td>
                                         </tr>
                                         <tr>
                                             <td><strong>Time Slot </strong></td>
-                                            <td>10AM-11AM</td>
+                                            <td>{{ $appointment->appointment_time_slot }}</td>
                                         </tr>
                                         <tr>
                                             <td><strong>Token Number </strong></td>
-                                            <td>27</td>
+                                            <td>{{ $appointment->appointment_token_number }}</td>
                                         </tr>
                                         <tr>
                                             <td><strong>Problem</strong></td>
-                                            <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur convallis egestas aliquet.
-                                                Nunc ullamcorper massa in magna pulvinar, a eleifend felis condimentum.</td>
+                                            <td>{{ $appointment->appointment_problem }}</td>
                                         </tr>
                                     </tbody>
                                 </table>
-                                <!--Export links-->
-                                <nav aria-label="Page navigation example">
-                                    <ul class="pagination export-pagination">
-                                        <li class="page-item">
-                                            <a class="page-link" href="#"><span class="ti-download"></span> csv</a>
-                                        </li>
-                                        <li class="page-item">
-                                            <a class="page-link" href="#"><span class="ti-printer"></span> print</a>
-                                        </li>
-                                        <li class="page-item">
-                                            <a class="page-link" href="#"><span class="ti-file"></span> PDF</a>
-                                        </li>
-                                        <li class="page-item">
-                                            <a class="page-link" href="#"><span class="ti-align-justify"></span> Excel</a>
-                                        </li>
-                                    </ul>
-                                </nav>
-                                <!-- /Export links-->
                                 <button type="button" class="btn btn-success mb-3"><span class="ti-pencil-alt"></span> Edit
                                     Appointment</button>
                                 <button type="button" class="btn btn-danger mb-3"><span class="ti-trash"></span> Delete

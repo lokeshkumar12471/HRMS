@@ -40,7 +40,7 @@ Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 Route::get('getpatientbydept',[PatientsController::class,'getpatientbydept'])->name('getpatientbydept');
 Route::get('patientcreate',[PatientsController::class,'index'])->name('patientcreate');
 Route::get('patientdisplay',[PatientsController::class,'create'])->name('allpatients');
-Route::post('patientstore',[PatientsController::class,'store'])->name('patientstore');
+Route::post('patientstore',[AppointmentsController::class,'store'])->name('patientstore');
 Route::get('patientedit/{id}',[PatientsController::class,'edit'])->name('patientedit');
 Route::post('patientupdate/{id}',[PatientsController::class,'update'])->name('patientupdate');
 Route::post('patientdelete/{id}',[PatientsController::class,'delete'])->name('patientdelete');
@@ -58,10 +58,14 @@ Route::post('doctorupdate/{id}', [DoctorsController::class, 'update'])->name('do
 Route::get('doctordelete/{id}', [DoctorsController::class, 'delete'])->name('doctordelete');
 
 //Appointments
-Route::get('addappointment', [AppointmentsController::class, 'addappointment'])->name('addappointment');
-Route::get('allappointments', [AppointmentsController::class, 'allappointments'])->name('allappointments');
-Route::get('appointmentdetails', [AppointmentsController::class, 'appointmentdetails'])->name('appointmentdetails');
+Route::get('appointmentdisplay', [AppointmentsController::class, 'create'])->name('allappointments');
+Route::get('appointmentdetails/{id}', [AppointmentsController::class, 'appointmentdetails'])->name('appointmentdetails');
 Route::get('editappointment', [AppointmentsController::class, 'editappointment'])->name('editappointment');
+Route::post('appointmentstore',[AppointmentsController::class,'store'])->name('appointmentstore');
+Route::get('addappointment',[AppointmentsController::class,'index'])->name('addappointment');
+
+
+
 
 //BloodBank
 Route::get('addbloodbank', [BloodBankController::class, 'addbloodbank'])->name('addbloodbank');

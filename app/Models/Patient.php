@@ -19,6 +19,7 @@ class Patient extends Model
      'patient_email',
      'patient_gender',
      'patient_address',
+     'patient_problem',
      'patient_profile',
     'role_id',
     ];

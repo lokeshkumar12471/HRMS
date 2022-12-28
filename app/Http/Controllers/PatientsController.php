@@ -28,8 +28,8 @@ $deptid = $request->deptid;
  $data['Doctor']=Doctor::where('department_id', $deptid)->get();
  return $data;
     }
-     public function edit($id){
 
+     public function edit($id){
         $data=array();
         $data['patient']=Patient::find($id);
         $data['doctor']=Doctor::find($data['patient']->doctor_id);

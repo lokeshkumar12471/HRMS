@@ -44,7 +44,7 @@
                                 @csrf
 								<div class="form-row">
                                      <div class="form-group col-md-6">
-										<label for="gender">Department_Name</label>
+										<label for="department_id">Department_Name</label>
 										<select  name="department_id" class="form-control" id="dept">
                                        @if($patient->id!='') <option
                                        value="{{ $department->id }}" style="background-color:grey">{{ $department->department_name }}  </option> @endif
