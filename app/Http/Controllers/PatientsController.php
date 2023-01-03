@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Patient;
 use App\Models\Doctor;
 use App\Models\Department;
+use Illuminate\Support\Facades\DB;
 
 class PatientsController extends Controller
 {
@@ -21,6 +22,11 @@ class PatientsController extends Controller
         $data['patient']=Patient::all();
         $data['Doctor']=Doctor::all();
         $data['Department']=Department::all();
+        $data['patient']=DB::table('patients')
+        ->join('departments','patients.department_id','=','departments.id')
+        ->join('doctors','patients.doctor_id','=','doctors.id')
+        ->select('patients.*','doctors.doctor_name','departments.department_name')
+        ->get();
         return view('patients.allpatients',$data);
     }
      public function getpatientbydept(Request $request){
@@ -29,15 +35,15 @@ $deptid = $request->deptid;
  return $data;
     }
 
-     public function edit($id){
+     public function getpatientbyid(Request $request){
+        $editapp=$request->editapp;
         $data=array();
-        $data['patient']=Patient::find($id);
+        $data['patient']=Patient::find($editapp);
         $data['doctor']=Doctor::find($data['patient']->doctor_id);
         $data['department']=Department::find($data['patient']->department_id);
          $data['doctors']=Doctor::all();
          $data['departments']=Department::all();
-
-        return view('patients.add_update_patient',$data);
+        return $data;
     }
     public function patientdetails($id){
         $data['patients']=Patient::find($id);

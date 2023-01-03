@@ -20,23 +20,9 @@
             </a>
         </li>
         <li>
-            <a href="#nav-appointment" data-toggle="collapse" aria-expanded="false">
+            <a href="{{ route('allappointments') }}"  aria-expanded="#">
                 <span class="ti-pencil-alt"></span> Appointments
             </a>
-            <ul class="collapse list-unstyled" id="nav-appointment">
-                <li>
-                    <a href="{{ route('addappointment') }}">Add Appointment</a>
-                </li>
-                <li>
-                    <a href="{{ route('allappointments') }}">All Appointments</a>
-                </li>
-                {{-- <li>
-                    <a href="{{ route('appointmentdetails') }}">Appointment Details</a>
-                </li> --}}
-                <li>
-                    <a href="{{ route('editappointment') }}">Edit Appointment</a>
-                </li>
-            </ul>
         </li>
         <li>
             <a href="#nav-bloodbanks" data-toggle="collapse" aria-expanded="false">

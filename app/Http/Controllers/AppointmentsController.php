@@ -7,6 +7,8 @@ use App\Models\Patient;
 use App\Models\Department;
 use App\Models\Doctor;
 use App\Models\Appointment;
+use Illuminate\Support\Facades\DB;
+
 class AppointmentsController extends Controller
 {
     public function addappointment(){
@@ -31,6 +33,11 @@ class AppointmentsController extends Controller
         $data['doctor']=Doctor::all();
         $data['patient']=Patient::all();
         $data['department']=Department::all();
+        $data['appointment']=DB::table('appointments')
+        ->join('departments','appointments.department_id','=','departments.id')
+        ->join('doctors','appointments.doctor_id','=','doctors.id')
+        ->select('appointments.*','doctors.doctor_name','departments.department_name')
+        ->get();
         return view('appointments.allappointments',$data);
     }
 
@@ -73,13 +80,15 @@ class AppointmentsController extends Controller
       $appointment->save();
        return redirect()->route('allappointments')->with('SuccessFull','Data Was Successfull Stored');
     }
-     public function appointmentdetails($id){
-        $data=array();
-        $data['appointment']=Appointment::find($id);
+
+       public function getappointmentbyid(Request $request){
+$appid = $request->appid;
+ $data=array();
+        $data['appointment']=Appointment::find($appid);
         $data['doctor']=Doctor::find($data['appointment']->doctor_id);
         $data['patient']=Patient::find($data['appointment']->patient_id);
 
         $data['department']=Department::find($data['appointment']->department_id);
-        return view('appointments.appointmentdetails',$data);
+ return $data;
     }
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Doctor;
 use App\Models\Department;
+use Illuminate\Support\Facades\DB;
 
 
 class DoctorsController extends Controller
@@ -20,6 +21,9 @@ class DoctorsController extends Controller
     {
         $data['department'] = Department::all();
         $data['doctor'] = Doctor::all();
+       $data['doctor']=DB::table('doctors')->join('departments','doctors.department_id','department_id')
+       ->select('doctors.*','departments.department_name')
+       ->get();
         return view('doctors.alldoctors', $data);
     }
     public function store(Request $request)
@@ -47,12 +51,13 @@ class DoctorsController extends Controller
         $doctor->save();
         return redirect()->route('alldoctors')->with('Successfull', 'Data Successfully Updated');
     }
-    public function edit($id)
+    public function getdoctorbyid(Request $request)
     {
+        $editapp=$request->editapp;
         $data = array();
         $data['department'] = Department::all();
-        $data['doctor'] = Doctor::find($id);
-        return view('doctors.add_update_doctor', $data);
+        $data['doctor'] = Doctor::find($editapp);
+       return $data;
     }
     public function update(Request $request, $id)
     {

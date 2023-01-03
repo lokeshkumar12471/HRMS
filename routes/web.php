@@ -41,7 +41,7 @@ Route::get('getpatientbydept',[PatientsController::class,'getpatientbydept'])->n
 Route::get('patientcreate',[PatientsController::class,'index'])->name('patientcreate');
 Route::get('patientdisplay',[PatientsController::class,'create'])->name('allpatients');
 Route::post('patientstore',[AppointmentsController::class,'store'])->name('patientstore');
-Route::get('patientedit/{id}',[PatientsController::class,'edit'])->name('patientedit');
+Route::get('getpatientbyid',[PatientsController::class,'getpatientbyid'])->name('getpatientbyid');
 Route::post('patientupdate/{id}',[PatientsController::class,'update'])->name('patientupdate');
 Route::post('patientdelete/{id}',[PatientsController::class,'delete'])->name('patientdelete');
 Route::get('patientdetails/{id}', [PatientsController::class, 'patientdetails'])->name('patientdetails');
@@ -53,13 +53,13 @@ Route::get('patientdetails/{id}', [PatientsController::class, 'patientdetails'])
 Route::get('doctorcreate', [DoctorsController::class, 'index'])->name('doctorcreate');
 Route::get('doctordisplay', [DoctorsController::class, 'create'])->name('alldoctors');
 Route::post('doctorstore', [DoctorsController::class, 'store'])->name('doctorstore');
-Route::get('doctoredit/{id}', [DoctorsController::class, 'edit'])->name('doctoredit');
+Route::get('getdoctorbyid', [DoctorsController::class, 'getdoctorbyid'])->name('getdoctorbyid');
 Route::post('doctorupdate/{id}', [DoctorsController::class, 'update'])->name('doctorupdate');
 Route::get('doctordelete/{id}', [DoctorsController::class, 'delete'])->name('doctordelete');
 
 //Appointments
 Route::get('appointmentdisplay', [AppointmentsController::class, 'create'])->name('allappointments');
-Route::get('appointmentdetails/{id}', [AppointmentsController::class, 'appointmentdetails'])->name('appointmentdetails');
+Route::get('getappointmentbyid', [AppointmentsController::class, 'getappointmentbyid'])->name('getappointmentbyid');
 Route::get('editappointment', [AppointmentsController::class, 'editappointment'])->name('editappointment');
 Route::post('appointmentstore',[AppointmentsController::class,'store'])->name('appointmentstore');
 Route::get('addappointment',[AppointmentsController::class,'index'])->name('addappointment');
