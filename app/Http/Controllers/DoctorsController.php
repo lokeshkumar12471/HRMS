@@ -59,7 +59,7 @@ class DoctorsController extends Controller
         $data['doctor'] = Doctor::find($editapp);
        return $data;
     }
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
         $doctor = Doctor::find($id);
         $doctor->doctor_name = $request->doctor_name;
@@ -84,11 +84,12 @@ class DoctorsController extends Controller
         $doctor->update();
         return redirect()->route('alldoctors')->with('Successfull', 'Data Successfully Updated');
     }
-    public function delete($id)
+    public function delete(Request $request)
     {
-
-        $doctor = Doctor::find($id);
+       $delete_id=$request->delete_id;
+        $doctor = Doctor::find($delete_id);
         $doctor->delete();
-        return redirect()->route('alldoctors')->with('Successfull', 'Data Successfully Updated');
+        $data="success";
+        return $data;
     }
 }

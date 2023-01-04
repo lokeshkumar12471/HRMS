@@ -74,10 +74,11 @@ $deptid = $request->deptid;
        return redirect()->route('allpatients')->with('SuccessFull','Data Was Successfull Updated');
 
     }
-     public function delete($id){
-     $patient=Patient::find($id);
+     public function delete(Request $request){
+    $delete_id=$request->delete_id;
+     $patient=Patient::find($delete_id);
      $patient->delete();
-     return redirect()->route('allpatients')->with('SuccessFull','Data Was Successfull Deleted');
-
+     $data="success";
+     return $data;
     }
     }

@@ -43,7 +43,7 @@ Route::get('patientdisplay',[PatientsController::class,'create'])->name('allpati
 Route::post('patientstore',[AppointmentsController::class,'store'])->name('patientstore');
 Route::get('getpatientbyid',[PatientsController::class,'getpatientbyid'])->name('getpatientbyid');
 Route::post('patientupdate/{id}',[PatientsController::class,'update'])->name('patientupdate');
-Route::post('patientdelete/{id}',[PatientsController::class,'delete'])->name('patientdelete');
+Route::get('patientdelete',[PatientsController::class,'delete'])->name('patientdelete');
 Route::get('patientdetails/{id}', [PatientsController::class, 'patientdetails'])->name('patientdetails');
 
 
@@ -54,8 +54,8 @@ Route::get('doctorcreate', [DoctorsController::class, 'index'])->name('doctorcre
 Route::get('doctordisplay', [DoctorsController::class, 'create'])->name('alldoctors');
 Route::post('doctorstore', [DoctorsController::class, 'store'])->name('doctorstore');
 Route::get('getdoctorbyid', [DoctorsController::class, 'getdoctorbyid'])->name('getdoctorbyid');
-Route::post('doctorupdate/{id}', [DoctorsController::class, 'update'])->name('doctorupdate');
-Route::get('doctordelete/{id}', [DoctorsController::class, 'delete'])->name('doctordelete');
+Route::post('doctorupdate', [DoctorsController::class, 'update'])->name('doctorupdate');
+Route::get('doctordelete', [DoctorsController::class, 'delete'])->name('doctordelete');
 
 //Appointments
 Route::get('appointmentdisplay', [AppointmentsController::class, 'create'])->name('allappointments');
@@ -69,9 +69,12 @@ Route::get('addappointment',[AppointmentsController::class,'index'])->name('adda
 
 //BloodBank
 Route::get('addbloodbank', [BloodBankController::class, 'addbloodbank'])->name('addbloodbank');
-Route::get('allbloodbanks', [BloodBankController::class, 'allbloodbanks'])->name('allbloodbanks');
 Route::get('bloodbankdetails', [BloodBankController::class, 'bloodbankdetails'])->name('bloodbankdetails');
-Route::get('editbloodbank', [BloodBankController::class, 'editbloodbank'])->name('editbloodbank');
+Route::post('bloodbank', [BloodBankController::class, 'store'])->name('bloodbank');
+Route::get('allbloodbanks', [BloodBankController::class, 'create'])->name('allbloodbanks');
+Route::get('editbloodbank', [BloodBankController::class, 'edit'])->name('editbloodbank');
+Route::get('deletebloodbank', [BloodBankController::class, 'delete'])->name('deletebloodbank');
+
 
 //Pharmacy
 Route::get('addpharmacy', [PharmacyController::class, 'addpharmacy'])->name('addpharmacy');
@@ -96,7 +99,7 @@ Route::get('departmentdisplay', [DepartmentController::class, 'index'])->name('a
 Route::post('departmentstore', [DepartmentController::class, 'store'])->name('departmentstore');
 Route::get('departmentedit/{id}', [DepartmentController::class, 'edit'])->name('departmentedit');
 Route::post('departmentupdate/{id}', [DepartmentController::class, 'update'])->name('departmentupdate');
-Route::get('departmentdelete/{id}', [DepartmentController::class, 'delete'])->name('departmentdelete');
+Route::get('departmentdelete', [DepartmentController::class, 'delete'])->name('departmentdelete');
 
 //otherpages
 Route::get('invoice', [InvoiceController::class, 'index'])->name('invoice');

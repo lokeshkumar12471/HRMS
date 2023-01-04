@@ -25,23 +25,9 @@
             </a>
         </li>
         <li>
-            <a href="#nav-bloodbanks" data-toggle="collapse" aria-expanded="false">
+            <a href="{{ route('allbloodbanks') }}"  aria-expanded="#">
                 <span class="ti-medall"></span> BloodBanks
             </a>
-            <ul class="collapse list-unstyled" id="nav-bloodbanks">
-                <li>
-                    <a href="{{ route('addbloodbank') }}">Add BloodBank</a>
-                </li>
-                <li>
-                    <a href="{{ route('allbloodbanks') }}">All BloodBanks</a>
-                </li>
-                <li>
-                    <a href="{{ route('bloodbankdetails') }}">BloodBank Details</a>
-                </li>
-                <li>
-                    <a href="{{ route('editbloodbank') }}">Edit BloodBank</a>
-                </li>
-            </ul>
         </li>
         <li>
             <a href="#nav-pharmacy" data-toggle="collapse" aria-expanded="false">

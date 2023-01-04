@@ -67,9 +67,9 @@
                                         <td><img src="{{ asset('uploads/doctor/' . $doctors->doctor_profile) }}"
                                                 height="100" width="100"></td>
 
-                                        <td><a href="{{ route('doctordelete', $doctors->id) }}"><button type="button"
-                                                    class="btn btn-danger mt-3 mb-0"><span class="ti-trash"></span>
-                                                    DELETE</button></a>
+                                        <td><button type="button"
+                                                    class="btn btn-danger mt-3 mb-0 doctordelete"  data-id="{{ $doctors->id }}"><span class="ti-trash"></span>
+                                                    DELETE</button>
                                             {{-- <a href="{{ route('doctoredit', $doctors->id) }}"><button type="button"
                                                     class="btn btn-success mt-3 mb-0"><span class="ti-pencil-alt"></span>
                                                     EDIT</button></a> --}}
@@ -110,7 +110,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="submit" class="btn btn-primary" id="editProfile" data-id="{{ $doctors->id }}">Update</button>
       </div>
     </div>
   </div>
@@ -127,8 +127,27 @@
    url: '{{ route('getdoctorbyid')}}',
       data:{ 'editapp':id },
       success:function(response){
-         $('.modal-body').append('<div class="form-group col-md-6 removedata"><label for="Doctor-name">Doctor Name</label><input type="text" name="doctor_name" value="'+response.doctor.doctor_name+'"/><div class="form-group col-md-6 removedata"><label for="dob">Date Of Birth</label><input type="date" name="doctor_date_of_birth" value="'+response.doctor.doctor_date_of_birth+'"/><div class="form-group col-md-6 removedata"><label for="specialization">Specialization</label><input type="text" name="specialization" value="'+response.doctor.specialization+'"/><div class="form-group col-md-6 removedata"><label for="experience">Experience</label><input type="text" name="doctor_experience" value="'+response.doctor.doctor_experience+'"/><div class="form-group col-md-6 removedata"><label for="age">Age</label><input type="text" name="doctor_age" value="'+response.doctor.doctor_age+'"/><div class="form-group col-md-6 removedata"><label for="phone">Phone</label><input type="text" name="doctor_phone" value="'+response.doctor.doctor_phone+'"/><div class="form-group col-md-6 removedata"><label for="email">Email</label><input type="text" name="doctor_email" value="'+response.doctor.doctor_email+'"/><div class="form-group col-md-6 removedata"><label for="about-doctor">Doctor Details</label><input type="text" name="doctor_details" value="'+response.doctor.doctor_details+'"/><div class="form-group col-md-6 removedata"><label for="address">Address</label><input type="text" name="doctor_address" value="'+response.doctor.doctor_address+'"/><div class="form-group col-md-6 removedata"><label for="file">File</label><input type="file" name="doctor_profile" value="'+response.doctor.doctor_profile+'"/>' );
+         $('.modal-body').append('<form id="updateDoc"><div class="form-group col-md-6 removedata"><label for="Doctor-name">Doctor    Name</label><input type="text" name="doctor_name" value="'+response.doctor.doctor_name+'"/><div class="form-group col-md-6 removedata"><label for="dob">Date Of Birth</label><input type="date" name="doctor_date_of_birth" value="'+response.doctor.doctor_date_of_birth+'"/><div class="form-group col-md-6 removedata"><label for="specialization">Specialization</label><input type="text" name="specialization" value="'+response.doctor.specialization+'"/><div class="form-group col-md-6 removedata"><label for="experience">Experience</label><input type="text" name="doctor_experience" value="'+response.doctor.doctor_experience+'"/><div class="form-group col-md-6 removedata"><label for="age">Age</label><input type="text" name="doctor_age" value="'+response.doctor.doctor_age+'"/><div class="form-group col-md-6 removedata"><label for="phone">Phone</label><input type="text" name="doctor_phone" value="'+response.doctor.doctor_phone+'"/><div class="form-group col-md-6 removedata"><label for="email">Email</label><input type="text" name="doctor_email" value="'+response.doctor.doctor_email+'"/><div class="form-group col-md-6 removedata"><label for="about-doctor">Doctor Details</label><input type="text" name="doctor_details" value="'+response.doctor.doctor_details+'"/><div class="form-group col-md-6 removedata"><label for="address">Address</label><input type="text" name="doctor_address" value="'+response.doctor.doctor_address+'"/><div class="form-group col-md-6 removedata"><label for="file">File</label><input type="file" name="doctor_profile" value="'+response.doctor.doctor_profile+'"/></form>' );
             }
    });
    });
+
+
+   $('.doctordelete').click(function(){
+    var id=$(this).attr('data-id');
+     $(".removedata").remove();
+   $.ajax({
+      type:'GET',
+   url: '{{ route('doctordelete')}}',
+      data:{ 'delete_id':id },
+      success:function(response){
+         if(response="success")
+            {
+                alert("deleted successfully");
+                window.location.reload();
+            }
+      }
+   });
+   });
+
 </script>

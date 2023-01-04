@@ -43,9 +43,8 @@
                                 @foreach ($department as $departments)
                                     <td>{{ $departments->id }}</td>
                                     <td>{{ $departments->department_name }}</td>
-                                    <td><a href="{{ route('departmentdelete', $departments->id) }}"><button
-                                                type="button" class="btn btn-danger mt-3 mb-0"><span
-                                                    class="ti-trash"></span> DELETE</button></a>
+                                    <td><button type="button" data-id="{{ $departments->id }}" class="btn btn-danger mt-3 mb-0 departmentdelete"><span
+                                                    class="ti-trash" ></span> DELETE</button>
                                         <a href="{{ route('departmentedit', $departments->id) }}"><button type="button"
                                                 class="btn btn-success mt-3 mb-0"><span class="ti-pencil-alt"></span>
                                                 EDIT</button></a>
@@ -62,3 +61,22 @@
     </div>
     <!-- /Main Content -->
 </x-guest-layout>
+
+<script>
+     $('.departmentdelete').click(function(){
+      var id=$(this).attr('data-id');
+      $.ajax({
+        type:'GET',
+        url:'{{ route('departmentdelete') }}',
+       data:{ 'delete_id':id },
+        success:function(response){
+            if(response="success")
+            {
+                alert("deleted successfully");
+                window.location.reload();
+            }
+        }
+      });
+    });
+
+</script>

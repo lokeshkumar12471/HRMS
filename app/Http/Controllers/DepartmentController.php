@@ -39,10 +39,11 @@ class DepartmentController extends Controller
         $department->update();
         return redirect()->route('alldepartments')->with('Successfull', 'Data Successfully Updated');
     }
-    public function delete($id)
-    {
-        $department = Department::find($id);
+    public function delete(request $request)
+    { $delete_id=$request->delete_id;
+        $department = Department::find($delete_id);
         $department->delete();
-        return redirect()->route('alldepartments')->with('Successfull', 'Data Successfully Updated');
+        $data="success";
+        return $data;
     }
 }

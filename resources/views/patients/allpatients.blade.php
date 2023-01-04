@@ -63,9 +63,9 @@
 											<td>
                                                    <a href="{{ route('patientdetails', $patients->id) }}"><button type="button"
                                                     class="btn btn-primary mt-3 mb-0"><span class="ti-pencil-alt"></span>
-                                                    History</button></a><a href="{{ route('patientdelete',  $patients->id) }}"><button type="button"
-                                                    class="btn btn-danger mt-3 mb-0"><span class="ti-trash"></span>
-                                                    DELETE</button></a>
+                                                    History</button></a><button type="button"
+                                                    class="btn btn-danger mt-3 mb-0 patientdelete" data-id="{{ $patients->id }}"><span class="ti-trash"></span>
+                                                    DELETE</button>
                                             {{-- <a href="{{ route('patientedit', $patients->id) }}"><button type="button"
                                                     class="btn btn-success mt-3 mb-0"><span class="ti-pencil-alt"></span>
                                                     EDIT</button></a> --}}
@@ -131,4 +131,20 @@
             }
    });
    });
+
+ $('.patientdelete').click(function(){
+      var id=$(this).attr('data-id');
+      $.ajax({
+        type:'GET',
+        url:'{{ route('patientdelete') }}',
+       data:{ 'delete_id':id },
+        success:function(response){
+            if(response="success")
+            {
+                alert("deleted successfully");
+                window.location.reload();
+            }
+        }
+      });
+    });
 </script>
