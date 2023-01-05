@@ -32,236 +32,32 @@
 								<table id="tableId" class="table table-bordered table-striped">
 									<thead>
 										<tr>
-											<th class="no-sort">
-												<div class="custom-control custom-checkbox">
-													<input class="custom-control-input" type="checkbox" id="select-all">
-													<label class="custom-control-label" for="select-all"></label>
-												</div>
-											</th>
-											<th>Appointment ID</th>
-											<th>Patient ID</th>
-											<th>Token Number</th>
-											<th>Doctor Name</th>
-											<th>Problem</th>
-											<th>Status</th>
+											<th>Tablet Name</th>
+											<th>Drug Name</th>
+											<th>Department Name</th>
+											<th>Expiry Date</th>
+											<th>Inventory Count</th>
+											<th>Price</th>
+                                            <th>Actions</th>
 										</tr>
 									</thead>
 									<tbody>
-										<tr>
-											<td>
-												<div class="custom-control custom-checkbox">
-													<input class="custom-control-input" type="checkbox" id="1">
-													<label class="custom-control-label" for="1"></label>
-												</div>
-											</td>
-											<td>AP872</td>
-											<td>P12Y</td>
-											<td>58</td>
-											<td>Dr Manoj</td>
-											<td>Small knee fracture</td>
-											<td>
-												<span class="badge badge-success">Active</span>
-											</td>
-                                        </tr>
+                                        @foreach ($pharmacy as $pharmacies)
                                         <tr>
+											<td>{{ $pharmacies->tablet }}</td>
+											<td>{{ $pharmacies->drug }}</td>
+											<td>{{ $pharmacies->department_name }}</td>
+											<td>{{ $pharmacies->expirydate }}</td>
+                                            <td>{{ $pharmacies->inventoryname }}</td>
+                                            <td>{{ $pharmacies->price }}</td>
 											<td>
-												<div class="custom-control custom-checkbox">
-													<input class="custom-control-input" type="checkbox" id="2">
-													<label class="custom-control-label" for="2"></label>
-												</div>
-											</td>
-											<td>AP8W72</td>
-											<td>P42Y</td>
-											<td>5</td>
-											<td>Dr Daniel</td>
-											<td>Viral Fever</td>
-											<td>
-												<span class="badge badge-success">Active</span>
-											</td>
-                                        </tr>
-                                        <tr>
-											<td>
-												<div class="custom-control custom-checkbox">
-													<input class="custom-control-input" type="checkbox" id="3">
-													<label class="custom-control-label" for="3"></label>
-												</div>
-											</td>
-											<td>AP873</td>
-											<td>P12G</td>
-											<td>8</td>
-											<td>Dr Manoj</td>
-											<td>-</td>
-											<td>
-												<span class="badge badge-warning">Pending</span>
-											</td>
-                                        </tr>
-                                        <tr>
-											<td>
-												<div class="custom-control custom-checkbox">
-													<input class="custom-control-input" type="checkbox" id="4">
-													<label class="custom-control-label" for="4"></label>
-												</div>
-											</td>
-											<td>APY72</td>
-											<td>P1DY</td>
-											<td>18</td>
-											<td>Dr Susan</td>
-											<td>Chest pain</td>
-											<td>
-												<span class="badge badge-success">Active</span>
-											</td>
-                                        </tr>
-                                        <tr>
-											<td>
-												<div class="custom-control custom-checkbox">
-													<input class="custom-control-input" type="checkbox" id="5">
-													<label class="custom-control-label" for="5"></label>
-												</div>
-											</td>
-											<td>AP872</td>
-											<td>P12Y</td>
-											<td>58</td>
-											<td>Dr Manoj</td>
-											<td>Small knee fracture</td>
-											<td>
-												<span class="badge badge-success">Active</span>
-											</td>
-                                        </tr>
-                                        <tr>
-											<td>
-												<div class="custom-control custom-checkbox">
-													<input class="custom-control-input" type="checkbox" id="6">
-													<label class="custom-control-label" for="6"></label>
-												</div>
-											</td>
-											<td>AP8W72</td>
-											<td>P42Y</td>
-											<td>5</td>
-											<td>Dr Daniel</td>
-											<td>Viral Fever</td>
-											<td>
-												<span class="badge badge-success">Active</span>
-											</td>
-                                        </tr>
-                                        <tr>
-											<td>
-												<div class="custom-control custom-checkbox">
-													<input class="custom-control-input" type="checkbox" id="7">
-													<label class="custom-control-label" for="7"></label>
-												</div>
-											</td>
-											<td>AP873</td>
-											<td>P12G</td>
-											<td>8</td>
-											<td>Dr Manoj</td>
-											<td>-</td>
-											<td>
-												<span class="badge badge-warning">Pending</span>
-											</td>
-                                        </tr>
-                                        <tr>
-											<td>
-												<div class="custom-control custom-checkbox">
-													<input class="custom-control-input" type="checkbox" id="8">
-													<label class="custom-control-label" for="8"></label>
-												</div>
-											</td>
-											<td>APY72</td>
-											<td>P1DY</td>
-											<td>18</td>
-											<td>Dr Susan</td>
-											<td>Chest pain</td>
-											<td>
-												<span class="badge badge-success">Active</span>
-											</td>
-                                        </tr>
-                                        <tr>
-											<td>
-												<div class="custom-control custom-checkbox">
-													<input class="custom-control-input" type="checkbox" id="9">
-													<label class="custom-control-label" for="9"></label>
-												</div>
-											</td>
-											<td>AP872</td>
-											<td>P12Y</td>
-											<td>58</td>
-											<td>Dr Manoj</td>
-											<td>Small knee fracture</td>
-											<td>
-												<span class="badge badge-success">Active</span>
-											</td>
-                                        </tr>
-                                        <tr>
-											<td>
-												<div class="custom-control custom-checkbox">
-													<input class="custom-control-input" type="checkbox" id="10">
-													<label class="custom-control-label" for="10"></label>
-												</div>
-											</td>
-											<td>AP8W72</td>
-											<td>P42Y</td>
-											<td>5</td>
-											<td>Dr Daniel</td>
-											<td>Viral Fever</td>
-											<td>
-												<span class="badge badge-success">Active</span>
-											</td>
-                                        </tr>
-                                        <tr>
-											<td>
-												<div class="custom-control custom-checkbox">
-													<input class="custom-control-input" type="checkbox" id="11">
-													<label class="custom-control-label" for="11"></label>
-												</div>
-											</td>
-											<td>AP873</td>
-											<td>P12G</td>
-											<td>8</td>
-											<td>Dr Manoj</td>
-											<td>-</td>
-											<td>
-												<span class="badge badge-warning">Pending</span>
-											</td>
-                                        </tr>
-                                        <tr>
-											<td>
-												<div class="custom-control custom-checkbox">
-													<input class="custom-control-input" type="checkbox" id="12">
-													<label class="custom-control-label" for="12"></label>
-												</div>
-											</td>
-											<td>APY72</td>
-											<td>P1DY</td>
-											<td>18</td>
-											<td>Dr Susan</td>
-											<td>Chest pain</td>
-											<td>
-												<span class="badge badge-success">Active</span>
+                                                <button type="button" class="btn btn-danger mt-3 mb-0 deletepharmacy" data-id="{{ $pharmacies->id }}"><span class="ti-trash"></span> DELETE</button>
+								                <button type="button" class="btn btn-primary mt-3 mb-0 editpharmacy" data-toggle="modal" data-target="#exampleModal" data-id={{ $pharmacies->id }}><span class="ti-pencil-alt"></span> EDIT</button>
 											</td>
 										</tr>
+                                           @endforeach
 									</tbody>
                                 </table>
-
-								<!--Export links-->
-								<nav aria-label="Page navigation example">
-									<ul class="pagination justify-content-center export-pagination">
-										<li class="page-item">
-											<a class="page-link" href="#"><span class="ti-download"></span> csv</a>
-										</li>
-										<li class="page-item">
-											<a class="page-link" href="#"><span class="ti-printer"></span>  print</a>
-										</li>
-										<li class="page-item">
-											<a class="page-link" href="#"><span class="ti-file"></span> PDF</a>
-										</li>
-										<li class="page-item">
-											<a class="page-link" href="#"><span class="ti-align-justify"></span> Excel</a>
-										</li>
-									</ul>
-								</nav>
-								<!-- /Export links-->
-								<button type="button" class="btn btn-danger mt-3 mb-0"><span class="ti-trash"></span> DELETE</button>
-								<button type="button" class="btn btn-primary mt-3 mb-0"><span class="ti-pencil-alt"></span> EDIT</button>
 							</div>
 						</div>
 					</div>
@@ -269,4 +65,55 @@
 				</div>
 			</div>
 			<!-- /Main Content -->
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Pharmacy List</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Update</button>
+      </div>
+    </div>
+  </div>
+</div>
 </x-guest-layout>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script>
+    $('.editpharmacy').on('click',function(){
+     var id=$(this).attr('data-id');
+     $('.removedata').remove();
+     $.ajax({
+        url:'{{ route('editpharmacy') }}',
+        type:"get",
+        data:{'editpharmacy':id},
+         success:function(response){
+              $('.modal-body').append('<form class="removedata"><div class="form-group col-md-6"><label for="Tablet Name">Tablet Name</label><input type="text" name="tablet" class="form-control" placeholder="Tablet Name" id="Tablet Name" value="'+response.pharmacy.tablet+'"></div><div class="form-group col-md-6"><label for="Drug Name">Drug Name</label><input type="text" name="drug" placeholder="Drug Name" class="form-control" id="Drug Name" value="'+response.pharmacy.drug+'"></div><div class="form-group col-md-6"><label for="department">Department Name</label><select class="form-control" id="department" name="department_id"><option> Select Option</option selected>@foreach ($pharmacy as $pharmacies)<option value="{{ $pharmacies->id }}">{{ $pharmacies->department_name }}</option>@endforeach</select></div>	<div class="form-group col-md-6"><label for="pharmacy-date">Expiry Date</label><input type="date" name="expirydate" placeholder="Pharmacy Date" class="form-control" id="pharmacy-date" value="'+response.pharmacy.expirydate+'"></div><div class="form-group col-md-6"><label for="Inventory Count">Inventory Count</label><input type="text" name="inventoryname" placeholder="Inventory Count" class="form-control" id="Inventory Count" value="'+response.pharmacy.inventoryname+'"></div><div class="form-group col-md-6"><label for="price">Price</label><input type="text" name="price" placeholder="Price" class="form-control" id="price" value="'+response.pharmacy.price+'"></div></form>')
+         }
+     });
+    });
+
+      $('.deletepharmacy').on('click',function(){
+     var id=$(this).attr('data-id');
+     $('.removedata').remove();
+     $.ajax({
+        url:'{{ route('deletepharmacy') }}',
+        type:"GET",
+        data:{'deletepharmacy':id},
+         success:function(response){
+            if(response="success"){
+                alert("deleted successfully");
+                 window.location.reload();
+            }
+         }
+     });
+    });
+</script>

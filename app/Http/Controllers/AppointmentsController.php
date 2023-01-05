@@ -11,15 +11,7 @@ use Illuminate\Support\Facades\DB;
 
 class AppointmentsController extends Controller
 {
-    public function addappointment(){
-     return view('appointments.add_update_appointment');
-    }
-      public function allappointments(){
-     return view('appointments.allappointments');
-    }
-      public function editappointment(){
-     return view('appointments.editappointment');
-    }
+
      public function index(){
         $data=array();
         $data['patient']=Patient::all();

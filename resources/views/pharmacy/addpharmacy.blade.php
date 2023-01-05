@@ -28,68 +28,40 @@
 					<div class="col-md-12">
 						<div class="widget-area-2 proclinic-box-shadow">
 							<h3 class="widget-title">Add Pharmacy</h3>
-							<form>
+							<form method="post" action="{{ route('pharmacy') }}">
+                               @csrf
 								<div class="form-row">
 									<div class="form-group col-md-6">
-										<label for="patient-name">Patient ID</label>
-										<input type="text" class="form-control" placeholder="Patient ID" id="patient-id">
-									</div>
-									<div class="form-group col-md-6">
-										<label for="department">Department</label>
-										<select class="form-control" id="department">
-											<option>Neuro</option>
-											<option>Ortho</option>
-											<option>General</option>
-                                            <option>Cardiology</option>
-                                             <option>Dentistry</option>
-                                              <option>Laboratory</option>
-                                               <option>Pulmonology</option>
-                                                <option>Gynecology</option>
-                                                <option>Gastrology</option>
-                                               <option>Neurology</option>
-                                                <option>Physical rehabilitation</option>
-                                                 <option>Pediatrician</option>
-										</select>
-									</div>
-									<div class="form-group col-md-6">
-										<label for="doctor-name">Doctor Name</label>
-										<input type="text" placeholder="Doctor Name" class="form-control" id="doctor-name">
-									</div>
-									<div class="form-group col-md-6">
-										<label for="pharmacy-date">Pharmacy Date</label>
-										<input type="date" placeholder="Pharmacy Date" class="form-control" id="pharmacy-date">
-									</div>
-									<div class="form-group col-md-6">
-										<label for="time-slot">Time Slot</label>
-										<select class="form-control" id="time-slot">
-											<option>10AM-11AM</option>
-											<option>11AM-12pm</option>
-											<option>12PM-01PM</option>
-											<option>2PM-3PM</option>
-											<option>3PM-4PM</option>
-											<option>4PM-5PM</option>
-											<option>6PM-7PM</option>
-											<option>7PM-8PM</option>
-											<option>8PM-9PM</option>
-										</select>
-									</div>
-									<div class="form-group col-md-6">
-										<label for="token-number">Token Number <small>(Auto Generated)</small></label>
-										<input type="text" placeholder="Token Number" class="form-control" id="token-number">
-									</div>
-									<div class="form-group col-md-12">
-										<label for="problem">Problem</label>
-										<textarea placeholder="Problem" class="form-control" id="problem" rows="3"></textarea>
+										<label for="Tablet Name">Tablet Name</label>
+										<input type="text" name="tablet" class="form-control" placeholder="Tablet Name" id="Tablet Name">
 									</div>
 
-									<div class="form-check col-md-12 mb-2">
-										<div class="text-left">
-											<div class="custom-control custom-checkbox">
-												<input class="custom-control-input" type="checkbox" id="ex-check-2">
-												<label class="custom-control-label" for="ex-check-2">Please Confirm</label>
-											</div>
-										</div>
+									<div class="form-group col-md-6">
+										<label for="Drug Name">Drug Name</label>
+										<input type="text" name="drug" placeholder="Drug Name" class="form-control" id="Drug Name">
 									</div>
+                                    	<div class="form-group col-md-6">
+										<label for="department">Department Name</label>
+										<select class="form-control" id="department" name="department_id">
+                                            <option> Select Option</option selected>
+                                            @foreach ($pharmacy as $pharmacies)
+                                           <option value="{{ $pharmacies->id }}">{{ $pharmacies->department_name }}</option>
+                                            @endforeach
+										</select>
+									</div>
+									<div class="form-group col-md-6">
+										<label for="pharmacy-date">Expiry Date</label>
+										<input type="date" name="expirydate" placeholder="Pharmacy Date" class="form-control" id="pharmacy-date">
+									</div>
+									<div class="form-group col-md-6">
+										<label for="Inventory Count">Inventory Count</label>
+                                    	<input type="text" name="inventoryname" placeholder="Inventory Count" class="form-control" id="Inventory Count">
+									</div>
+									<div class="form-group col-md-6">
+										<label for="price">Price</label>
+										<input type="text" name="price" placeholder="Price" class="form-control" id="price">
+									</div>
+
 									<div class="form-group col-md-6 mb-3">
 										<button type="submit" class="btn btn-primary btn-lg">Submit</button>
 									</div>
