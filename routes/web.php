@@ -37,13 +37,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
 //Patients
-Route::get('getpatientbydept',[PatientsController::class,'getpatientbydept'])->name('getpatientbydept');
-Route::get('patientcreate',[PatientsController::class,'index'])->name('patientcreate');
-Route::get('patientdisplay',[PatientsController::class,'create'])->name('allpatients');
-Route::post('patientstore',[AppointmentsController::class,'store'])->name('patientstore');
-Route::get('getpatientbyid',[PatientsController::class,'getpatientbyid'])->name('getpatientbyid');
-Route::post('patientupdate/{id}',[PatientsController::class,'update'])->name('patientupdate');
-Route::get('patientdelete',[PatientsController::class,'delete'])->name('patientdelete');
+Route::get('getpatientbydept', [PatientsController::class, 'getpatientbydept'])->name('getpatientbydept');
+Route::get('patientcreate', [PatientsController::class, 'index'])->name('patientcreate');
+Route::get('patientdisplay', [PatientsController::class, 'create'])->name('allpatients');
+Route::post('patientstore', [AppointmentsController::class, 'store'])->name('patientstore');
+Route::get('getpatientbyid', [PatientsController::class, 'getpatientbyid'])->name('getpatientbyid');
+Route::post('patientupdate/{id}', [PatientsController::class, 'update'])->name('patientupdate');
+Route::get('patientdelete', [PatientsController::class, 'delete'])->name('patientdelete');
 Route::get('patientdetails/{id}', [PatientsController::class, 'patientdetails'])->name('patientdetails');
 
 
@@ -60,8 +60,8 @@ Route::get('doctordelete', [DoctorsController::class, 'delete'])->name('doctorde
 //Appointments
 Route::get('appointmentdisplay', [AppointmentsController::class, 'create'])->name('allappointments');
 Route::get('getappointmentbyid', [AppointmentsController::class, 'getappointmentbyid'])->name('getappointmentbyid');
-Route::post('appointmentstore',[AppointmentsController::class,'store'])->name('appointmentstore');
-Route::get('addappointment',[AppointmentsController::class,'index'])->name('addappointment');
+Route::post('appointmentstore', [AppointmentsController::class, 'store'])->name('appointmentstore');
+Route::get('addappointment', [AppointmentsController::class, 'index'])->name('addappointment');
 
 
 //BloodBank
@@ -90,9 +90,13 @@ Route::get('paymentinvoice', [PaymentsController::class, 'paymentinvoice'])->nam
 
 //Roomallotments
 Route::get('addroomallotment', [RoomAllotmentsController::class, 'addroomallotment'])->name('addroomallotment');
-Route::get('allrooms', [RoomAllotmentsController::class, 'allrooms'])->name('allrooms');
+Route::get('allrooms', [RoomAllotmentsController::class, 'create'])->name('allrooms');
 Route::get('roomtype', [RoomAllotmentsController::class, 'roomtype'])->name('roomtype');
+Route::post('roomallotment', [RoomAllotmentsController::class, 'store'])->name('storeroomallotment');
 Route::get('editroomallotment', [RoomAllotmentsController::class, 'editroomallotment'])->name('editroomallotment');
+Route::get('deleteroomallotment', [RoomAllotmentsController::class, 'deleteroomallotment'])->name('deleteroomallotment');
+Route::get('getroomallotmentid', [RoomAllotmentsController::class, 'getroomallotmentid'])->name('getroomallotmentid');
+
 
 // //Departments
 Route::get('departmentcreate', [DepartmentController::class, 'create'])->name('departmentcreate');

@@ -10,7 +10,7 @@
             </a>
         </li>
         <li>
-            <a href="{{  route('allpatients') }}"  aria-expanded="#">
+            <a href="{{ route('allpatients') }}" aria-expanded="#">
                 <span class="ti-wheelchair"></span> Patients
             </a>
         </li>
@@ -20,33 +20,19 @@
             </a>
         </li>
         <li>
-            <a href="{{ route('allappointments') }}"  aria-expanded="#">
+            <a href="{{ route('allappointments') }}" aria-expanded="#">
                 <span class="ti-pencil-alt"></span> Appointments
             </a>
         </li>
         <li>
-            <a href="{{ route('allbloodbanks') }}"  aria-expanded="#">
+            <a href="{{ route('allbloodbanks') }}" aria-expanded="#">
                 <span class="ti-medall"></span> BloodBanks
             </a>
         </li>
         <li>
-            <a href="#nav-pharmacy" data-toggle="collapse" aria-expanded="false">
+            <a href="{{ route('allpharmacies') }}" aria-expanded="#">
                 <span class="ti-write"></span> Pharmacy
             </a>
-            <ul class="collapse list-unstyled" id="nav-pharmacy">
-                <li>
-                    <a href="{{ route('addpharmacy') }}">Add Pharmacy</a>
-                </li>
-                <li>
-                    <a href="{{ route('allpharmacies') }}">All Pharmacies</a>
-                </li>
-                <li>
-                    <a href="{{ route('pharmacydetails') }}">Pharmacy Details</a>
-                </li>
-                <li>
-                    <a href="{{ route('editpharmacy') }}">Edit Pharmacy</a>
-                </li>
-            </ul>
         </li>
         <li>
             <a href="#nav-payment" data-toggle="collapse" aria-expanded="false">
