@@ -27,7 +27,7 @@ class RoomAllotmentsController extends Controller
     public function editroomallotment(Request $request)
     {
         $edit_id = $request->edit_id;
-        $roomallotment = RoomAllotment::find($edit_id);
+        $roomallotment['roomallotment'] = RoomAllotment::find($edit_id);
         return $roomallotment;
     }
     public function deleteroomallotment(Request $request)
@@ -35,7 +35,8 @@ class RoomAllotmentsController extends Controller
         $delete_id = $request->delete_id;
         $roomallotment = RoomAllotment::find($delete_id);
         $roomallotment->delete();
-        return $roomallotment;
+        $data="success";
+        return $data;
     }
     public function roomtype()
     {
@@ -61,5 +62,8 @@ class RoomAllotmentsController extends Controller
     }
     public function getroomallotmentid(Request $request)
     {
+        $viewroomallotment=$request->viewroomallotment;
+        $roomallotment['roomallotment']=RoomAllotment::find($viewroomallotment);
+        return $roomallotment;
     }
 }

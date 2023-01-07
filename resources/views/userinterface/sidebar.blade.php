@@ -52,22 +52,24 @@
         </li>
         <li>
             <a href="#nav-rooms" data-toggle="collapse" aria-expanded="false">
-                <span class="ti-key"></span> Room Allotments
+                <span class="ti-key"></span> User Management
             </a>
             <ul class="collapse list-unstyled" id="nav-rooms">
                 <li>
-                    <a href="{{ route('addroomallotment') }}">Add Room Allotment</a>
+                    <a href="{{ route('addroomallotment') }}">Add New User</a>
                 </li>
                 <li>
-                    <a href="{{ route('allrooms') }}">All Rooms</a>
+                    <a href="{{ route('allrooms') }}">User Master List</a>
                 </li>
                 <li>
-                    <a href="{{ route('roomtype') }}">Room Type</a>
-                </li>
-                <li>
-                    <a href="{{ route('editroomallotment') }}">Edit Room Allotment</a>
+                    <a href="{{ route('roomtype') }}">User Roles</a>
                 </li>
             </ul>
+        </li>
+           <li>
+            <a href="{{ route('allrooms') }}" aria-expanded="#">
+                <span class="ti-key"></span> Room Allotments
+            </a>
         </li>
         <li>
             <a href="{{ route('alldepartments') }}" aria-expanded="#">
