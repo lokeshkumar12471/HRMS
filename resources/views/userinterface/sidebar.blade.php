@@ -51,12 +51,12 @@
             </ul>
         </li>
         <li>
-            <a href="#nav-rooms" data-toggle="collapse" aria-expanded="false">
-                <span class="ti-key"></span> User Management
+            <a href="{{ route('allusers') }}" aria-expanded="#">
+                <span class="ti-magnet"></span> User Management
             </a>
-            <ul class="collapse list-unstyled" id="nav-rooms">
+            {{-- <ul class="collapse list-unstyled" id="nav-rooms">
                 <li>
-                    <a href="{{ route('addroomallotment') }}">Add New User</a>
+                    <a href="{{ route('allusers') }}">Add New User</a>
                 </li>
                 <li>
                     <a href="{{ route('allrooms') }}">User Master List</a>
@@ -64,34 +64,97 @@
                 <li>
                     <a href="{{ route('roomtype') }}">User Roles</a>
                 </li>
-            </ul>
-        </li>
-           <li>
-            <a href="{{ route('allrooms') }}" aria-expanded="#">
-                <span class="ti-key"></span> Room Allotments
-            </a>
+            </ul> --}}
         </li>
         <li>
-            <a href="{{ route('alldepartments') }}" aria-expanded="#">
-                <span class="ti-folder"></span> Departments
+            <a href="#nav-administrator" data-toggle="collapse" aria-expanded="false">
+                <span class="ti-support"></span> Administrator
             </a>
+            <ul class="collapse list-unstyled" id="nav-administrator">
+                <li>
+                    <a href="{{ route('addroomallotment') }}">Company Information</a>
+                </li>
+                <li>
+                    <a href="{{ route('allrooms') }}">Department Master</a>
+                </li>
+                <li>
+                    <a href="{{ route('roomtype') }}">Designation Master</a>
+                </li>
+                <li>
+                    <a href="{{ route('addroomallotment') }}">Bill Group Name Master</a>
+                </li>
+                <li>
+                    <a href="{{ route('allrooms') }}">Particular Bill Master</a>
+                </li>
+                <li>
+                    <a href="{{ route('roomtype') }}">Complain Master</a>
+                </li>
+                <li>
+                    <a href="{{ route('addroomallotment') }}">Diagnosis Master</a>
+                </li>
+                <li>
+                    <a href="{{ route('allrooms') }}">Surgical Package</a>
+                </li>
+                <li>
+                    <a href="{{ route('roomtype') }}">Insurance Company</a>
+                </li>
+                <li>
+                    <a href="#nav-medicine" data-toggle="collapse" aria-expanded="false">Medicine
+                        Management</a>
+                </li>
+                <ul class="collapse list-unstyled" id="nav-medicine">
+                    <li>
+                        <a href="{{ route('addroomallotment') }}">Category Master</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('addroomallotment') }}">Drug Name Master</a>
+                    </li>
+                    <li>
+                </ul>
+                <a href="{{ route('allrooms') }}">Acknowledge Receipt</a>
         </li>
         <li>
-            <a href="#nav-pages" data-toggle="collapse" aria-expanded="false">
-                <span class="ti-file"></span> Other Pages
-            </a>
-            <ul class="collapse list-unstyled" id="nav-pages">
-                <li>
-                    <a href="{{ route('login') }}">Login </a>
-                </li>
-                <li>
-                    <a href="{{ route('signup') }}">Sign Up</a>
-                </li>
-                <li>
-                    <a href="{{ route('invoice') }}">Invoice</a>
-                </li>
-            </ul>
+            <a href="{{ route('roomtype') }}">System Parameters</a>
         </li>
+        <li>
+            <a href="{{ route('roomtype') }}">Backup Database</a>
+        </li>
+        <li>
+            <a href="{{ route('roomtype') }}">System Pages</a>
+        </li>
+    </ul>
+    </li>
+    <li>
+        <a href="{{ route('allrooms') }}" aria-expanded="#">
+            <span class="ti-key"></span> Room Allotments
+        </a>
+    </li>
+    <li>
+        <a href="{{ route('alldepartments') }}" aria-expanded="#">
+            <span class="ti-folder"></span> Departments
+        </a>
+    </li>
+    <li>
+        <a href="{{ route('alluserpermission') }}" aria-expanded="#">
+            <span class="ti-magnet"></span> Permissions
+        </a>
+    </li>
+    <li>
+        <a href="#nav-pages" data-toggle="collapse" aria-expanded="false">
+            <span class="ti-file"></span> Other Pages
+        </a>
+        <ul class="collapse list-unstyled" id="nav-pages">
+            <li>
+                <a href="{{ route('login') }}">Login </a>
+            </li>
+            <li>
+                <a href="{{ route('signup') }}">Sign Up</a>
+            </li>
+            <li>
+                <a href="{{ route('invoice') }}">Invoice</a>
+            </li>
+        </ul>
+    </li>
     </ul>
 </nav>
 <!-- /Sidebar -->

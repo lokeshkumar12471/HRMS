@@ -21,9 +21,9 @@ class DoctorsController extends Controller
     {
         $data['department'] = Department::all();
         $data['doctor'] = Doctor::all();
-       $data['doctor']=DB::table('doctors')->join('departments','doctors.department_id','department_id')
-       ->select('doctors.*','departments.department_name')
-       ->get();
+        $data['doctor'] = DB::table('doctors')->join('departments', 'doctors.department_id', 'department_id')
+            ->select('doctors.*', 'departments.department_name')
+            ->get();
         return view('doctors.alldoctors', $data);
     }
     public function store(Request $request)
@@ -53,15 +53,15 @@ class DoctorsController extends Controller
     }
     public function getdoctorbyid(Request $request)
     {
-        $editapp=$request->editapp;
+        $editapp = $request->editapp;
         $data = array();
         $data['department'] = Department::all();
         $data['doctor'] = Doctor::find($editapp);
-       return $data;
+        return $data;
     }
     public function update(Request $request)
     {
-        $doctor = Doctor::find($id);
+        $doctor = Doctor::find();
         $doctor->doctor_name = $request->doctor_name;
         $doctor->department_id = $request->department_id;
         $doctor->specialization = $request->specialization;
@@ -86,10 +86,10 @@ class DoctorsController extends Controller
     }
     public function delete(Request $request)
     {
-       $delete_id=$request->delete_id;
+        $delete_id = $request->delete_id;
         $doctor = Doctor::find($delete_id);
         $doctor->delete();
-        $data="success";
+        $data = "success";
         return $data;
     }
 }

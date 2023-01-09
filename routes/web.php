@@ -10,7 +10,8 @@ use App\Http\Controllers\AppointmentsController;
 use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\PharmacyController;
 use App\Http\Controllers\BloodBankController;
-
+use App\Http\Controllers\UserManagementController;
+use App\Http\Controllers\UserPermissionController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,9 +31,6 @@ use Illuminate\Support\Facades\Route;
 
 
 
-
-
-
 //Dashboard
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
@@ -45,8 +43,6 @@ Route::get('getpatientbyid', [PatientsController::class, 'getpatientbyid'])->nam
 Route::post('patientupdate/{id}', [PatientsController::class, 'update'])->name('patientupdate');
 Route::get('patientdelete', [PatientsController::class, 'delete'])->name('patientdelete');
 Route::get('patientdetails/{id}', [PatientsController::class, 'patientdetails'])->name('patientdetails');
-
-
 
 
 //Doctors
@@ -88,6 +84,14 @@ Route::get('addpayment', [PaymentsController::class, 'addpayment'])->name('addpa
 Route::get('allpayments', [PaymentsController::class, 'allpayments'])->name('allpayments');
 Route::get('paymentinvoice', [PaymentsController::class, 'paymentinvoice'])->name('paymentinvoice');
 
+//Usermanagement
+Route::post('addnewuser', [UserManagementController::class, 'store'])->name('addnewuser');
+Route::get('add', [UserManagementController::class, 'index'])->name('add');
+Route::get('allusers', [UserManagementController::class, 'create'])->name('allusers');
+Route::get('editusermanagement', [UserManagementController::class, 'edit'])->name('editusermanagement');
+Route::get('deleteusermanagement', [UserManagementController::class, 'delete'])->name('deleteusermanagement');
+
+
 //Roomallotments
 Route::get('addroomallotment', [RoomAllotmentsController::class, 'addroomallotment'])->name('addroomallotment');
 Route::get('allrooms', [RoomAllotmentsController::class, 'create'])->name('allrooms');
@@ -105,6 +109,14 @@ Route::post('departmentstore', [DepartmentController::class, 'store'])->name('de
 Route::get('departmentedit/{id}', [DepartmentController::class, 'edit'])->name('departmentedit');
 Route::post('departmentupdate/{id}', [DepartmentController::class, 'update'])->name('departmentupdate');
 Route::get('departmentdelete', [DepartmentController::class, 'delete'])->name('departmentdelete');
+
+//Permissions
+Route::get('permission', [UserPermissionController::class, 'index'])->name('permission');
+Route::post('addnewuserpermission', [UserPermissionController::class, 'store'])->name('addnewuserpermission');
+Route::get('alluserpermission', [UserPermissionController::class, 'create'])->name('alluserpermission');
+Route::get('edituserpermission', [UserPermissionController::class, 'edit'])->name('edituserpermission');
+Route::get('deleteuserpermission', [UserPermissionController::class, 'delete'])->name('deleteuserpermission');
+
 
 //otherpages
 Route::get('invoice', [InvoiceController::class, 'index'])->name('invoice');
