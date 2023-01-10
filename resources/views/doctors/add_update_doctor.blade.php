@@ -105,6 +105,13 @@
 
                             </div>
                             <div class="form-group col-md-6">
+                                <label for="password">Password</label>
+                                <input type="password" name="doctor_password"
+                                  value=""
+                                    placeholder="password" class="form-control" id="password">
+
+                            </div>
+                            <div class="form-group col-md-6">
                                 <label for="gender">Gender</label>
                                 <select class="form-control" name="doctor_gender" id="gender">
                                     <option value="">Select Option</option>

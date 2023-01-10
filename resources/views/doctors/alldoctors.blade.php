@@ -26,7 +26,9 @@
         <div class="row">
             <!-- Widget Item -->
             <div class="col-md-12">
+                 <?php if(session()->get('roleid') == '3'){ ?>
                 <a href="{{ route('doctorcreate') }}" class="btn btn-danger mt-3 mb-0 text-end">Add</a>
+                <?php } ?>
                 <div class="widget-area-2 proclinic-box-shadow">
                     <h3 class="widget-title">Doctors List</h3>
                     <div class="table-responsive mb-3">
@@ -46,7 +48,9 @@
                                     <th>Doctor Details</th>
                                     <th>Doctor Address</th>
                                     <th>Doctor Profile</th>
+                                     <?php if(session()->get('roleid') == '3'){ ?>
                                     <th>Actions</th>
+                                       <?php } ?>
                                 </tr>
                             </thead>
                             <tbody>
@@ -66,8 +70,9 @@
                                         <td>{{ $doctors->doctor_address }}</td>
                                         <td><img src="{{ asset('uploads/doctor/' . $doctors->doctor_profile) }}"
                                                 height="100" width="100"></td>
-
-                                        <td><button type="button" class="btn btn-danger mt-3 mb-0 doctordelete"
+                                       <?php if(session()->get('roleid') == '3'){ ?>
+                                        <td>
+                                            <button type="button" class="btn btn-danger mt-3 mb-0 doctordelete"
                                                 data-id="{{ $doctors->id }}"><span class="ti-trash"></span>
                                                 DELETE</button>
                                             <button type="button" class="btn btn-success mt-3 mb-0 editApp"
@@ -76,6 +81,7 @@
                                                 <span class="ti-pencil-alt"></span>Edit
                                             </button>
                                         </td>
+  <?php } ?>
                                     </tr>
                                 @endforeach
                             </tbody>

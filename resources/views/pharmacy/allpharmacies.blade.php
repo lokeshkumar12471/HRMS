@@ -26,6 +26,9 @@
 				<div class="row">
 					<!-- Widget Item -->
 					<div class="col-md-12">
+                        <?php if(session()->get('roleid') == '3'){ ?>
+<a href="{{ route('addpharmacy') }}" class="btn btn-danger mt-3 mb-0 text-end">Add</a>
+  <?php }?>
 						<div class="widget-area-2 proclinic-box-shadow">
 							<h3 class="widget-title">Pharmacy List</h3>
 							<div class="table-responsive mb-3">
@@ -38,7 +41,9 @@
 											<th>Expiry Date</th>
 											<th>Inventory Count</th>
 											<th>Price</th>
+                                             <?php if(session()->get('roleid') == '3'){ ?>
                                             <th>Actions</th>
+                                            <?php }?>
 										</tr>
 									</thead>
 									<tbody>
@@ -50,10 +55,11 @@
 											<td>{{ $pharmacies->expirydate }}</td>
                                             <td>{{ $pharmacies->inventoryname }}</td>
                                             <td>{{ $pharmacies->price }}</td>
-											<td>
+											 <?php if(session()->get('roleid') == '3'){ ?><td>
                                                 <button type="button" class="btn btn-danger mt-3 mb-0 deletepharmacy" data-id="{{ $pharmacies->id }}"><span class="ti-trash"></span> DELETE</button>
 								                <button type="button" class="btn btn-primary mt-3 mb-0 editpharmacy" data-toggle="modal" data-target="#exampleModal" data-id={{ $pharmacies->id }}><span class="ti-pencil-alt"></span> EDIT</button>
 											</td>
+                                            <?php } ?>
 										</tr>
                                            @endforeach
 									</tbody>

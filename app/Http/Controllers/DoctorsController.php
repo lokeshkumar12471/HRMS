@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Doctor;
+use App\Models\User;
+
 use App\Models\Department;
 use Illuminate\Support\Facades\DB;
 
@@ -49,6 +51,12 @@ class DoctorsController extends Controller
         }
         $doctor->role_id = 2;
         $doctor->save();
+        $user = new User;
+        $user->name = $request->doctor_name;
+        $user->email = $request->doctor_email;
+        $user->password = base64_encode($request->doctor_password);
+        $user->roleid = 2;
+         $user->save();
         return redirect()->route('alldoctors')->with('Successfull', 'Data Successfully Updated');
     }
     public function getdoctorbyid(Request $request)

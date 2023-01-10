@@ -15,7 +15,7 @@ class PatientsController extends Controller
         $data = array();
         $data['patient'] = Patient::all();
         $data['doctor'] = Doctor::all();
-        $data['department'] = Department::all();
+        $data['departments'] = Department::all();
         return view('patients.add_update_patient', $data);
     }
     public function create()
@@ -37,7 +37,6 @@ class PatientsController extends Controller
         $data['Doctor'] = Doctor::where('department_id', $deptid)->get();
         return $data;
     }
-
     public function getpatientbyid(Request $request)
     {
         $editapp = $request->editapp;
@@ -75,8 +74,14 @@ class PatientsController extends Controller
             $file->move('uploads/patient', $filename);
             $patient->patient_profile = $filename;
         }
-        $patient->role_id = 4;
+        $patient->role_id = 1;
         $patient->update();
+        $user = new User;
+        $user->name = $request->patient_name;
+        $user->email = $request->patient_email;
+        $user->password = base64_encode($request->patient_password);
+        $user->roleid = 1;
+         $user->save();
         return redirect()->route('allpatients')->with('SuccessFull', 'Data Was Successfull Updated');
     }
     public function delete(Request $request)

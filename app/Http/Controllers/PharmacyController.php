@@ -30,7 +30,7 @@ class PharmacyController extends Controller
         $pharmacy->inventoryname=$request->inventoryname;
         $pharmacy->price=$request->price;
         $pharmacy->save();
-        return redirect()->route('pharmacy')->with('success','Data Was Successfully Stored');
+        return redirect()->route('allpharmacies')->with('success','Data Was Successfully Stored');
     }
     public function create(){
         $pharmacy['pharmacy']=Pharmacy::all();

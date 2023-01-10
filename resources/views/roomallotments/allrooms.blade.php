@@ -26,6 +26,9 @@
         <div class="row">
             <!-- Widget Item -->
             <div class="col-md-12">
+                <?php if(session()->get('roleid')=='3'){?>
+<a href="{{ route('addroomallotment') }}" class="btn btn-danger mt-3 mb-0 text-end">Add</a>
+                    <?php }?>
                 <div class="widget-area-2 proclinic-box-shadow">
                     <h3 class="widget-title">Room Allotments List</h3>
                     <div class="table-responsive mb-3">
@@ -44,7 +47,9 @@
                                     <th>Total Beds</th>
                                     <th>Occupied Beds</th>
                                     <th>UnOccupied Beds</th>
+                                    <?php if (session()->get('roleid')=='3'){?>
                                     <th>Actions</th>
+                                    <?php }?>
                                 </tr>
                             </thead>
                             <tbody>

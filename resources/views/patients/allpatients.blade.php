@@ -26,6 +26,9 @@
         <div class="row">
             <!-- Widget Item -->
             <div class="col-md-12">
+                <?php if(session()->get('roleid') == '3'){ ?>
+<a href="{{ route('patientcreate') }}" class="btn btn-danger mt-3 mb-0 text-end">Add</a>
+  <?php }?>
                 <div class="widget-area-2 proclinic-box-shadow">
                     <h3 class="widget-title">Patients List</h3>
                     <div class="table-responsive mb-3">
@@ -43,7 +46,10 @@
                                     <th>Gender</th>
                                     <th>Address</th>
                                     <th>Patient Profile</th>
+                                    <?php if(session()->get('roleid')=='3'){?>
                                     <th>Actions</th>
+                                    <?php }
+                                    ?>
                                 </tr>
                             </thead>
                             <tbody>
@@ -61,23 +67,25 @@
                                         <td>{{ $patients->patient_address }}</td>
                                         <td><img src="{{ asset('uploads/patient/' . $patients->patient_profile) }}"
                                                 height="100" width="100"></td>
+
+                                                   <?php if(session()->get('roleid') == '3'){ ?>
                                         <td>
                                             <a href="{{ route('patientdetails', $patients->id) }}"><button
                                                     type="button" class="btn btn-primary mt-3 mb-0"><span
                                                         class="ti-pencil-alt"></span>
-                                                    History</button></a><button type="button"
+                                                    History</button></a>
+                                                    <button type="button"
                                                 class="btn btn-danger mt-3 mb-0 patientdelete"
                                                 data-id="{{ $patients->id }}"><span class="ti-trash"></span>
                                                 DELETE</button>
-                                            {{-- <a href="{{ route('patientedit', $patients->id) }}"><button type="button"
-                                                    class="btn btn-success mt-3 mb-0"><span class="ti-pencil-alt"></span>
-                                                    EDIT</button></a> --}}
                                             <button type="button" class="btn btn-success mt-3 mb-0 editApp"
                                                 data-id="{{ $patients->id }}" data-toggle="modal"
                                                 data-target="#exampleModal">
                                                 <span class="ti-pencil-alt"></span>Edit
                                             </button>
-                                        </td>
+
+                                          </td>
+                                            <?php } ?>
                                 @endforeach
                                 </tr>
                             </tbody>

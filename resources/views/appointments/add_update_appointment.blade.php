@@ -28,7 +28,7 @@
 					<div class="col-md-12">
 						<div class="widget-area-2 proclinic-box-shadow">
 							<h3 class="widget-title">Add Appointment</h3>
-							<form method="post" action="{{ route('patientstore') }}" enctype="multipart/form-data">
+							<form method="post" action="{{ route('appointmentstore') }}" enctype="multipart/form-data">
                                 @csrf
 								<div class="form-row">
 									<div class="form-group col-md-6">
@@ -81,6 +81,14 @@
 										<label for="patient_date_of_birth">Email</label>
 										<input type="email" name="patient_email" placeholder="Patient_Email" class="form-control" id="doctor-name">
 									</div>
+                                    <div class="form-group col-md-6">
+                                <label for="password">Password</label>
+                                <input type="password" name="patient_password"
+                                  value=""
+                                    placeholder="password" class="form-control" id="password">
+
+                            </div>
+
 
 									<div class="form-group col-md-6">
 										<label for="time-slot">Time Slot</label>
@@ -109,11 +117,6 @@
                                     <div class="form-group col-md-6">
 										<label for="patient_address">Address</label>
 										<textarea type="text" placeholder="Patient_Address" name="patient_address" class="form-control" id="patient_address"></textarea>
-									</div>
-
-                                    <div class="form-group col-md-6">
-										<label for="patient_profile">Patient Profile</label>
-										<input type="file" placeholder="Patient_Profile" name="patient_profile" class="form-control" id="patient_profile">
 									</div>
 
 									<div class="form-group col-md-6">

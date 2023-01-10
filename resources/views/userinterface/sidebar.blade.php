@@ -9,16 +9,19 @@
                 <span class="ti-home"></span> Dashboard
             </a>
         </li>
+
+
         <li>
             <a href="{{ route('allpatients') }}" aria-expanded="#">
                 <span class="ti-wheelchair"></span> Patients
             </a>
         </li>
-        <li>
+        <?php if(session()->get('roleid')=='3'){?><li>
             <a href="{{ route('alldoctors') }}" aria-expanded="#">
                 <span class="ti-user"></span> Doctors
             </a>
         </li>
+        <?php } ?>
         <li>
             <a href="{{ route('allappointments') }}" aria-expanded="#">
                 <span class="ti-pencil-alt"></span> Appointments
@@ -34,6 +37,7 @@
                 <span class="ti-write"></span> Pharmacy
             </a>
         </li>
+          <?php if(session()->get('roleid')=='3'){?>
         <li>
             <a href="#nav-payment" data-toggle="collapse" aria-expanded="false">
                 <span class="ti-money"></span> Payments
@@ -155,6 +159,12 @@
             </li>
         </ul>
     </li>
+    <?php } ?>
+        <li>
+            <a href="{{ route('logout') }}" aria-expanded="#">
+                <span class="ti-magnet"></span> Logout
+            </a>
+        </li>
     </ul>
 </nav>
 <!-- /Sidebar -->

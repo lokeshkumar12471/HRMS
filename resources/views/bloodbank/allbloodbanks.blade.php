@@ -26,6 +26,9 @@
 				<div class="row">
 					<!-- Widget Item -->
 					<div class="col-md-12">
+<?php if(session()->get('roleid') == '3'){ ?>
+<a href="{{ route('addbloodbank') }}" class="btn btn-danger mt-3 mb-0 text-end">Add</a>
+  <?php }?>
 						<div class="widget-area-2 proclinic-box-shadow">
 							<h3 class="widget-title">BloodBanks List</h3>
 							<div class="table-responsive mb-3">
@@ -35,7 +38,9 @@
 											<th>BloodBank ID</th>
 											<th>Blood Group</th>
 											<th>Blood Quantity</th>
+                                     <?php if(session()->get('roleid') == '3'){ ?>
 											<th>Action</th>
+                                             <?php } ?>
 										</tr>
 									</thead>
 									<tbody>
@@ -44,9 +49,11 @@
 											<td>{{$bloodbanks->id }}</td>
                 							<td>{{$bloodbanks->bloodgroup }}</td>
 											<td>{{ $bloodbanks->bloodquantity }}</td>
+                                             <?php if(session()->get('roleid') == '3'){ ?>
 											<td><button type="button" class="btn btn-danger mt-3 mb-0 blooddelete" data-id={{ $bloodbanks->id }} ><span class="ti-trash"></span> DELETE</button>
 								               <button type="button" class="btn btn-primary mt-3 mb-0 bloodedit" data-toggle="modal" data-id={{ $bloodbanks->id }} data-target="#exampleModal" ><span class="ti-pencil-alt"></span> EDIT</button></td>
-                                            @endforeach
+                                            <?php } ?>
+                                               @endforeach
                                         </tr>
 									</tbody>
                                 </table>

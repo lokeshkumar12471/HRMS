@@ -26,6 +26,10 @@
         <div class="row">
             <!-- Widget Item -->
             <div class="col-md-12">
+<?php
+if(session()->get('roleid')=='3'){?>
+<a href="{{ route('add') }}" class="btn btn-danger mt-3 mb-0 text-end">Add</a>
+               <?php }?>
                 <div class="widget-area-2 proclinic-box-shadow">
                     <h3 class="widget-title">User List</h3>
                     <div class="table-responsive mb-3">
@@ -51,7 +55,9 @@
                                     <th>Email_Address</th>
                                     <th>UserName</th>
                                     <th>Password</th>
+                                      <?php if(session()->get('roleid') == '3'){ ?>
                                     <th>Actions</th>
+                                    <?php } ?>
                                 </tr>
                             </thead>
                             <tbody>
@@ -76,7 +82,7 @@
                                         <td>{{ $usermanagements->email_address }}</td>
                                         <td>{{ $usermanagements->username }}</td>
                                         <td>{{ $usermanagements->password }}</td>
-                                        <td>
+                                      <?php if(session()->get('roleid') == '3'){ ?><td>
                                             <button type="button" class="btn btn-danger mt-3 mb-0 deleteusermanagement"
                                                 data-id="{{ $usermanagements->id }}"><span class="ti-trash"></span>
                                                 DELETE</button>
@@ -84,7 +90,8 @@
                                                 data-toggle="modal" data-target="#exampleModal"
                                                 data-id={{ $usermanagements->id }}><span class="ti-pencil-alt"></span>
                                                 EDIT</button>
-                                        </td>
+                                                </td>
+                                        <?php } ?>
                                     </tr>
                                 @endforeach
                             </tbody>

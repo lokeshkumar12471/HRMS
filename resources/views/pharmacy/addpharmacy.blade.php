@@ -28,7 +28,7 @@
 					<div class="col-md-12">
 						<div class="widget-area-2 proclinic-box-shadow">
 							<h3 class="widget-title">Add Pharmacy</h3>
-							<form method="post" action="{{ route('pharmacy') }}">
+							<form method="post" action="{{route('pharmacy')}}">
                                @csrf
 								<div class="form-row">
 									<div class="form-group col-md-6">

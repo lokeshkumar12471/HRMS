@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Models\Patient;
 use App\Models\Department;
 use App\Models\Doctor;
+use App\Models\User;
+
 use App\Models\Appointment;
 use Illuminate\Support\Facades\DB;
 
@@ -32,10 +34,8 @@ class AppointmentsController extends Controller
         ->get();
         return view('appointments.allappointments',$data);
     }
-
-
      public function store(Request $request){
-         $patient=new Patient;
+      $patient=new Patient;
       $patient->department_id=$request->department_id;
       $patient->doctor_id=$request->doctor_id;
       $patient->patient_name=$request->patient_name;
@@ -46,6 +46,7 @@ class AppointmentsController extends Controller
       $patient->patient_gender=$request->patient_gender;
       $patient->patient_address=$request->patient_address;
       $patient->patient_problem=$request->patient_problem;
+
       if($request->hasFile('patient_profile')){
         $file=$request->file('patient_profile');
         $extension=$file->getClientOriginalExtension();
@@ -53,7 +54,10 @@ class AppointmentsController extends Controller
         $file->move('uploads/patient',$filename);
         $patient->patient_profile =$filename;
       }
-       $patient->role_id=4;
+      else{
+        $patient->patient_profile ="sample.jpg";
+      }
+       $patient->role_id=1;
        $patient->save();
       $appointment=new Appointment;
       $appointment->department_id=$request->department_id;
@@ -69,7 +73,14 @@ class AppointmentsController extends Controller
       $appointment->appointment_address=$request->patient_address;
       $appointment->appointment_token_number=$request->patient_token_number;
       $appointment->appointment_problem=$request->patient_problem;
+
       $appointment->save();
+       $user = new User;
+        $user->name = $request->patient_name;
+        $user->email = $request->patient_email;
+        $user->password = base64_encode($request->patient_password);
+        $user->roleid = 1;
+         $user->save();
        return redirect()->route('allappointments')->with('SuccessFull','Data Was Successfull Stored');
     }
 
@@ -79,7 +90,6 @@ $appid = $request->appid;
         $data['appointment']=Appointment::find($appid);
         $data['doctor']=Doctor::find($data['appointment']->doctor_id);
         $data['patient']=Patient::find($data['appointment']->patient_id);
-
         $data['department']=Department::find($data['appointment']->department_id);
  return $data;
     }

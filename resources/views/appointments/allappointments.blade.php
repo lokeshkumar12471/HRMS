@@ -26,6 +26,9 @@
 				<div class="row">
 					<!-- Widget Item -->
 					<div class="col-md-12">
+       <?php if(session()->get('roleid')=='3'){?>
+<a href="{{ route('addappointment') }}" class="btn btn-danger mt-3 mb-0 text-end">Add</a>
+                            <?php } ?>
 						<div class="widget-area-2 proclinic-box-shadow">
 							<h3 class="widget-title">Appointments List</h3>
 							<div class="table-responsive mb-3">
@@ -45,7 +48,10 @@
                                             <th>Address</th>
                                             <th>Token Number</th>
                                             <th>Problem</th>
+                                             <?php if(session()->get('roleid') == '3'){ ?>
                                              <th>Action</th>
+                                             <?php }
+                                             ?>
 										</tr>
 									</thead>
 									<tbody>
@@ -64,9 +70,9 @@
 											<td>{{ $appointments->appointment_address }}</td>
 											<td>{{ $appointments->appointment_token_number }}</td>
 											<td>{{ $appointments->appointment_problem }}</td>
-                                        <td><button type="button" class="btn btn-primary viewApp"  data-id="{{ $appointments->id }}"data-toggle="modal" data-target="#exampleModal">
+                                         <?php if(session()->get('roleid') == '3'){ ?><td><button type="button" class="btn btn-primary viewApp"  data-id="{{ $appointments->id }}"data-toggle="modal" data-target="#exampleModal">
  View
-</button></td>
+</button></td> <?php } ?>
                                         </tr>
                                         @endforeach
 									</tbody>

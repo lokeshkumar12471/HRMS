@@ -12,6 +12,7 @@ use App\Http\Controllers\PharmacyController;
 use App\Http\Controllers\BloodBankController;
 use App\Http\Controllers\UserManagementController;
 use App\Http\Controllers\UserPermissionController;
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,16 +30,19 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
+Route::get('/', [LoginController::class, 'index'])->name('login');
+Route::get('/login/checkLogin', [LoginController::class, 'checkLogin'])->name('checkLogin');
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
 
 //Dashboard
-Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
 //Patients
 Route::get('getpatientbydept', [PatientsController::class, 'getpatientbydept'])->name('getpatientbydept');
 Route::get('patientcreate', [PatientsController::class, 'index'])->name('patientcreate');
 Route::get('patientdisplay', [PatientsController::class, 'create'])->name('allpatients');
-Route::post('patientstore', [AppointmentsController::class, 'store'])->name('patientstore');
+// Route::post('patientstore', [PatientsController::class, 'store'])->name('patientstore');
 Route::get('getpatientbyid', [PatientsController::class, 'getpatientbyid'])->name('getpatientbyid');
 Route::post('patientupdate/{id}', [PatientsController::class, 'update'])->name('patientupdate');
 Route::get('patientdelete', [PatientsController::class, 'delete'])->name('patientdelete');
@@ -50,7 +54,7 @@ Route::get('doctorcreate', [DoctorsController::class, 'index'])->name('doctorcre
 Route::get('doctordisplay', [DoctorsController::class, 'create'])->name('alldoctors');
 Route::post('doctorstore', [DoctorsController::class, 'store'])->name('doctorstore');
 Route::get('getdoctorbyid', [DoctorsController::class, 'getdoctorbyid'])->name('getdoctorbyid');
-Route::post('doctorupdate', [DoctorsController::class, 'update'])->name('doctorupdate');
+//  Route::post('doctorupdate', [DoctorsController::class, 'update'])->name('doctorupdate');
 Route::get('doctordelete', [DoctorsController::class, 'delete'])->name('doctordelete');
 
 //Appointments
@@ -120,5 +124,4 @@ Route::get('deleteuserpermission', [UserPermissionController::class, 'delete'])-
 
 //otherpages
 Route::get('invoice', [InvoiceController::class, 'index'])->name('invoice');
-Route::get('login', [InvoiceController::class, 'login'])->name('login');
 Route::get('signup', [InvoiceController::class, 'signup'])->name('signup');

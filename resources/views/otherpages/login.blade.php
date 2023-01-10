@@ -1,6 +1,5 @@
 <x-login-layout>
-	<!-- /Color Changer -->
-	<div class="wrapper">
+<div class="wrapper">
 		<!-- Page Content  -->
 		<div id="content">
 			<div class="container-fluid">
@@ -8,7 +7,7 @@
 					<div class="col-sm-6 auth-box">
 						<div class="proclinic-box-shadow">
 							<h3 class="widget-title">Login</h3>
-							<form class="widget-form">
+							<form class="widget-form" action="{{ route('checkLogin') }}">
 								<!-- form-group -->
 								<div class="form-group row">
 									<div class="col-sm-12">
@@ -20,31 +19,19 @@
 								<!-- form-group -->
 								<div class="form-group row">
 									<div class="col-sm-12">
-										<input type="password" placeholder="Password" name="pass_confirmation" class="form-control" data-validation="strength" data-validation-strength="2"
+										<input type="password" name="pass" placeholder="Password"  class="form-control" data-validation="strength" data-validation-strength="2"
 										 data-validation-has-keyup-event="true">
 									</div>
 								</div>
 								<!-- /.form-group -->
-								<!-- Check Box -->
-								<div class="form-check row">
-									<div class="col-sm-12 text-left">
-										<div class="custom-control custom-checkbox">
-											<input class="custom-control-input" type="checkbox" id="ex-check-2">
-											<label class="custom-control-label" for="ex-check-2">Remember Me</label>
-										</div>
-									</div>
-								</div>
-								<!-- /Check Box -->
+
 								<!-- Login Button -->
 								<div class="button-btn-block">
-									<button type="button" class="btn btn-primary btn-lg btn-block">Login</button>
+									<button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
 								</div>
 								<!-- /Login Button -->
 								<!-- Links -->
-								<div class="auth-footer-text">
-									<small>New User,
-										<a href="sign-up.html">Sign Up</a> Here</small>
-								</div>
+
 								<!-- /Links -->
 							</form>
 						</div>

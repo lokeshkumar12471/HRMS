@@ -26,7 +26,9 @@
         <div class="row">
             <!-- Widget Item -->
             <div class="col-md-12">
+                <?php if(session()->get('roleid')=='3'){?>
                 <a href="{{ route('permission') }}" class="btn btn-danger mt-3 mb-0 text-end">Add</a>
+                <?php } ?>
                 <div class="widget-area-2 proclinic-box-shadow">
                     <h3 class="widget-title">All User Permission List</h3>
                     <div class="table-responsive mb-3">
@@ -35,7 +37,9 @@
                                 <tr>
                                     <th>Role</th>
                                     <th>Permission_Name</th>
+                                    <?php if(session()->get('roleid')=='3'){?>
                                     <th>Actions</th>
+                                    <?php } ?>
                                 </tr>
                             </thead>
                             <tbody>
@@ -43,6 +47,7 @@
                                     <tr>
                                         <td>{{ $permissions->name }}</td>
                                         <td>{{ $permissions->permissionname }}</td>
+                                        <?php if(session()->get('roleid')=='3'){?>
                                         <td>
                                             <button type="button" class="btn btn-danger mt-3 mb-0 deleteuserpermission"
                                                 data-id="{{ $permissions->id }}"><span class="ti-trash"></span>
@@ -52,6 +57,7 @@
                                                 data-id={{ $permissions->id }}><span class="ti-pencil-alt"></span>
                                                 EDIT</button>
                                         </td>
+                                        <?php } ?>
                                     </tr>
                                 @endforeach
                             </tbody>

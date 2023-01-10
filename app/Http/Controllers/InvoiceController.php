@@ -9,10 +9,8 @@ class InvoiceController extends Controller
       public function index(){
         return view('otherpages.invoice');
     }
-      public function login(){
-        return view('otherpages.login');
-    }
       public function signup(){
         return view('otherpages.signup');
     }
+
 }
