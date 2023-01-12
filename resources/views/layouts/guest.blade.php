@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -81,5 +80,4 @@
     <script src="{{ asset('datatable/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('datatable/dataTables.bootstrap4.min.js') }}"></script>
 </body>
-
 </html>

@@ -1,7 +1,7 @@
 <!-- Sidebar -->
 <nav id="sidebar" class="proclinic-bg">
     <div class="sidebar-header">
-        <a href="index-2.html"><img src="{{ asset('images/logo.png') }}" class="logo" alt="logo"></a>
+        <a href="#"><img src="{{ asset('images/logo.png') }}" class="logo" alt="logo"></a>
     </div>
     <ul class="list-unstyled components">
         <li class="active">
@@ -9,12 +9,13 @@
                 <span class="ti-home"></span> Dashboard
             </a>
         </li>
-           <?php if(session()->get('roleid')=='1')?>
+           <?php if(session()->get('roleid')=='3'){?>
         <li>
             <a href="{{ route('allpatients') }}" aria-expanded="#">
                 <span class="ti-wheelchair"></span> Patients
             </a>
         </li>
+    <?php } ?>
         <?php if(session()->get('roleid')=='3'){?><li>
             <a href="{{ route('alldoctors') }}" aria-expanded="#">
                 <span class="ti-user"></span> Doctors
@@ -59,17 +60,6 @@
             <a href="{{ route('allusers') }}" aria-expanded="#">
                 <span class="ti-magnet"></span> User Management
             </a>
-            {{-- <ul class="collapse list-unstyled" id="nav-rooms">
-                <li>
-                    <a href="{{ route('allusers') }}">Add New User</a>
-                </li>
-                <li>
-                    <a href="{{ route('allrooms') }}">User Master List</a>
-                </li>
-                <li>
-                    <a href="{{ route('roomtype') }}">User Roles</a>
-                </li>
-            </ul> --}}
         </li>
         <li>
             <a href="#nav-administrator" data-toggle="collapse" aria-expanded="false">
@@ -121,13 +111,13 @@
         <li>
             <a href="{{ route('roomtype') }}">System Parameters</a>
         </li>
+    </ul>
         <li>
             <a href="{{ route('roomtype') }}">Backup Database</a>
         </li>
         <li>
             <a href="{{ route('roomtype') }}">System Pages</a>
         </li>
-    </ul>
     </li>
     <li>
         <a href="{{ route('allrooms') }}" aria-expanded="#">

@@ -70,7 +70,7 @@
                             <div class="form-group col-md-6">
                                 <label for="patient-name">Patient Name</label>
                                 <input type="text" name="patient_name"
-                                    @if (isset($patient->id) != '') value="{{ $patient->patient_name }}" class="form-control" placeholder="Patient name" id="patient-name" @endif>
+                                    @if (isset($patient->id) != '') value="{{ $patient->patient_name }}"@endif class="form-control" placeholder="Patient name" id="patient-name" >
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="dob">Date Of Birth</label>
@@ -116,8 +116,10 @@
                             </div>
                             <div class="form-group col-md-12">
                                 <label for="exampleFormControlTextarea1">Address</label>
-                                <textarea name="patient_address" @if (isset($patient->id) != '') placeholder="Address" class="form-control">{{ $patient->patient_address }}</textarea>@endif</div>
-                            <div class="form-group col-md-12">
+                                <textarea name="patient_address"  placeholder="Address" class="form-control">@if (isset($patient->id) != ''){{ $patient->patient_address }}@endif</textarea>
+                            </div>
+
+                                <div class="form-group col-md-12">
                                 <label for="file">File</label>
                                 <input type="file" name="patient_profile" class="form-control" id="file">
                                 @if (isset($patient->id) != '')

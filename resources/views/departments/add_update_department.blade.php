@@ -22,7 +22,6 @@
     <!-- /Breadcrumb -->
     <!-- Main Content -->
     <div class="container-fluid">
-
         <div class="row">
             <!-- Widget Item -->
             <div class="col-md-12">

@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\DB;
 class DashboardController extends Controller
 {
 public function index(){
-
+$data=array();
 if(session()->get('roleid')=='2')
 {
     if(session()->get('emailid')!="")

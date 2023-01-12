@@ -33,7 +33,18 @@ class AppointmentsController extends Controller
             ->get();
             }
         }
-            else{
+        if(session()->get('roleid')=='1'||session()->get('roleid')=='2'){
+        if(session()->get('emailid')!=""){
+        $data['appointment'] = DB::table('users')
+         ->join('patients', 'users.email', 'patient_email')
+        ->join('departments','patients.department_id','=','departments.id')
+        ->join('appointments','appointments.appointment_name','=','patients.patient_name')
+        ->join('doctors','patients.doctor_id','=','doctors.id')
+        ->select('patients.*', 'doctors.*', 'departments.*','users.*','appointments.*')
+            ->get();
+        }
+        }
+        else{
  $data['appointment']=Appointment::all();
         $data['doctor']=Doctor::all();
         $data['patient']=Patient::all();
