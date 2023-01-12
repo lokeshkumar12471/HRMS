@@ -23,7 +23,18 @@ class AppointmentsController extends Controller
     }
     public function create(){
         $data=array();
-        $data['appointment']=Appointment::all();
+        if(session()->get('roleid')=='2'){
+             if(session()->get('emailid')!=""){
+ $data['appointment'] = DB::table('users')
+           ->join('doctors', 'users.email', 'doctor_email')
+            ->join('appointments', 'appointments.doctor_id', '=', 'doctors.id')
+            ->join('departments', 'appointments.department_id', '=', 'departments.id')
+            ->select('appointments.*', 'doctors.*', 'departments.*','users.*')
+            ->get();
+            }
+        }
+            else{
+ $data['appointment']=Appointment::all();
         $data['doctor']=Doctor::all();
         $data['patient']=Patient::all();
         $data['department']=Department::all();
@@ -32,8 +43,9 @@ class AppointmentsController extends Controller
         ->join('doctors','appointments.doctor_id','=','doctors.id')
         ->select('appointments.*','doctors.doctor_name','departments.department_name')
         ->get();
-        return view('appointments.allappointments',$data);
     }
+     return view('appointments.allappointments',$data);
+}
      public function store(Request $request){
       $patient=new Patient;
       $patient->department_id=$request->department_id;

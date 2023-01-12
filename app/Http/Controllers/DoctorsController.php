@@ -64,7 +64,7 @@ class DoctorsController extends Controller
         $editapp = $request->editapp;
         $data = array();
         $data['department'] = Department::all();
-        $data['doctor'] = Doctor::find($editapp);
+
         return $data;
     }
     public function update(Request $request)

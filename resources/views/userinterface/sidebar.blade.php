@@ -9,8 +9,7 @@
                 <span class="ti-home"></span> Dashboard
             </a>
         </li>
-
-
+           <?php if(session()->get('roleid')=='1')?>
         <li>
             <a href="{{ route('allpatients') }}" aria-expanded="#">
                 <span class="ti-wheelchair"></span> Patients
@@ -27,6 +26,7 @@
                 <span class="ti-pencil-alt"></span> Appointments
             </a>
         </li>
+        <?php if(session()->get('roleid')=='3'||session()->get('roleid')=='2'){?>
         <li>
             <a href="{{ route('allbloodbanks') }}" aria-expanded="#">
                 <span class="ti-medall"></span> BloodBanks
@@ -37,6 +37,7 @@
                 <span class="ti-write"></span> Pharmacy
             </a>
         </li>
+        <?php }?>
           <?php if(session()->get('roleid')=='3'){?>
         <li>
             <a href="#nav-payment" data-toggle="collapse" aria-expanded="false">

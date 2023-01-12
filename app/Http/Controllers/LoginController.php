@@ -17,7 +17,8 @@ class LoginController extends Controller
         $password = base64_encode($request->pass);
         $result = DB::select("select * from users where email='$email'and password='$password'");
         session(['userid'=>$result[0]->id]);
-        session(['roleid'=>$result[0]->role]);
+        session(['roleid'=>$result[0]->roleid]);
+        session(['emailid'=>$result[0]->email]);
         if(session()->get('roleid') == '3')
         {
             return redirect('/dashboard');
@@ -25,7 +26,6 @@ class LoginController extends Controller
         elseif(session()->get('roleid') == '2')
         {
            return redirect('/dashboard');
-
         }
         else
         {

@@ -21,14 +21,33 @@ class PatientsController extends Controller
     public function create()
     {
         $data = array();
-        $data['patient'] = Patient::all();
+         if(session()->get('roleid')=='2')
+{
+    if(session()->get('emailid')!="")
+    {
+          $data['patient'] = DB::table('users')
+           ->join('doctors', 'users.email', 'doctor_email')
+            ->join('patients', 'patients.doctor_id', '=', 'doctors.id')
+            ->join('departments', 'patients.department_id', '=', 'departments.id')
+            ->select('patients.*', 'doctors.*', 'departments.*','users.*')
+            ->get();
+    }
+}
+    else{
+          $data['patient'] = Patient::all();
         $data['Doctor'] = Doctor::all();
         $data['Department'] = Department::all();
         $data['patient'] = DB::table('patients')
             ->join('departments', 'patients.department_id', '=', 'departments.id')
             ->join('doctors', 'patients.doctor_id', '=', 'doctors.id')
+            ->join('doctors', 'patients.doctor_id', '=', 'doctors.id')
             ->select('patients.*', 'doctors.doctor_name', 'departments.department_name')
             ->get();
+    }
+
+
+
+
         return view('patients.allpatients', $data);
     }
     public function getpatientbydept(Request $request)
