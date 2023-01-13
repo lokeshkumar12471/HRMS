@@ -13,6 +13,7 @@ use App\Http\Controllers\BloodBankController;
 use App\Http\Controllers\UserManagementController;
 use App\Http\Controllers\UserPermissionController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\MessageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -121,6 +122,10 @@ Route::get('alluserpermission', [UserPermissionController::class, 'create'])->na
 Route::get('edituserpermission', [UserPermissionController::class, 'edit'])->name('edituserpermission');
 Route::get('deleteuserpermission', [UserPermissionController::class, 'delete'])->name('deleteuserpermission');
 
+//Messages
+Route::get('patientmessage', [MessageController::class, 'patient'])->name('patient');
+Route::get('doctormessage', [MessageController::class, 'doctor'])->name('doctor');
+Route::get('patientstore', [MessageController::class, 'patientstore'])->name('patientstore');
 
 //otherpages
 Route::get('invoice', [InvoiceController::class, 'index'])->name('invoice');

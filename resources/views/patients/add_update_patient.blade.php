@@ -70,7 +70,8 @@
                             <div class="form-group col-md-6">
                                 <label for="patient-name">Patient Name</label>
                                 <input type="text" name="patient_name"
-                                    @if (isset($patient->id) != '') value="{{ $patient->patient_name }}"@endif class="form-control" placeholder="Patient name" id="patient-name" >
+                                    @if (isset($patient->id) != '') value="{{ $patient->patient_name }}" @endif
+                                    class="form-control" placeholder="Patient name" id="patient-name">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="dob">Date Of Birth</label>
@@ -98,9 +99,8 @@
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="password">Password</label>
-                                <input type="password" name="patient_password"
-                                  value=""
-                                    placeholder="password" class="form-control" id="password">
+                                <input type="password" name="patient_password" value="" placeholder="password"
+                                    class="form-control" id="password">
 
                             </div>
                             <div class="form-group col-md-6">
@@ -116,22 +116,28 @@
                             </div>
                             <div class="form-group col-md-12">
                                 <label for="exampleFormControlTextarea1">Address</label>
-                                <textarea name="patient_address"  placeholder="Address" class="form-control">@if (isset($patient->id) != ''){{ $patient->patient_address }}@endif</textarea>
+                                <textarea name="patient_address" placeholder="Address" class="form-control">
+@if (isset($patient->id) != '')
+{{ $patient->patient_address }}
+@endif
+</textarea>
                             </div>
 
-                                <div class="form-group col-md-12">
+                            <div class="form-group col-md-12">
                                 <label for="file">File</label>
                                 <input type="file" name="patient_profile" class="form-control" id="file">
                                 @if (isset($patient->id) != '')
-<img src="{{ asset('uploads/patient/'. $patient->patient_profile) }}"name="patient_profile" width="100" heigth="100">@endif
+                                    <img src="{{ asset('uploads/patient/' . $patient->patient_profile) }}"name="patient_profile"
+                                        width="100" heigth="100">
+                                @endif
                             </div>
 
                             <div class="form-group col-md-6 mb-3">
                                 @if (isset($patient->id) != '')
-<button type="submit" class="btn btn-primary btn-lg">Update</button>
-@else
-<button type="submit" class="btn btn-primary btn-lg">Submit</button>
-@endif
+                                    <button type="submit" class="btn btn-primary btn-lg">Update</button>
+                                @else
+                                    <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                                @endif
                             </div>
                         </div>
                     </form>
@@ -157,7 +163,7 @@
                 for (const items of response.Doctor) {
                     $(".doctors").append("<option value='" + items.id + "' class='removedata'>" +
                         items.doctor_name + "</option>");
-                      }
+                }
             }
         });
     });

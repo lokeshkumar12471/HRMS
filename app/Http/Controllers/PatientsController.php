@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Doctor;
 use App\Models\Patient;
 use App\Models\Department;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -20,28 +21,26 @@ class PatientsController extends Controller
     }
     public function create()
     {
-          $data = array();
-         if(session()->get('roleid')=='2')
-{
-    if(session()->get('emailid')!="")
-    {
-           $data['patient'] = DB::table('users')
-           ->join('doctors', 'users.email', 'doctor_email')
-            ->join('patients', 'patients.doctor_id', '=', 'doctors.id')
-            ->join('departments', 'patients.department_id', '=', 'departments.id')
-            ->select('patients.*', 'doctors.*', 'departments.*','users.*')
-            ->get();
-    }
-}else{
-        $data['patient'] = Patient::all();
-        $data['Doctor'] = Doctor::all();
-        $data['Department'] = Department::all();
-        $data['patient'] = DB::table('patients')
-            ->join('departments', 'patients.department_id', '=', 'departments.id')
-            ->join('doctors', 'patients.doctor_id', '=', 'doctors.id')
-            ->select('patients.*', 'doctors.doctor_name', 'departments.department_name')
-            ->get();
-    }
+        $data = array();
+        if (session()->get('roleid') == '2') {
+            if (session()->get('emailid') != "") {
+                $data['patient'] = DB::table('users')
+                    ->join('doctors', 'users.email', 'doctor_email')
+                    ->join('patients', 'patients.doctor_id', '=', 'doctors.id')
+                    ->join('departments', 'patients.department_id', '=', 'departments.id')
+                    ->select('patients.*', 'doctors.*', 'departments.*', 'users.*')
+                    ->get();
+            }
+        } else {
+            $data['patient'] = Patient::all();
+            $data['Doctor'] = Doctor::all();
+            $data['Department'] = Department::all();
+            $data['patient'] = DB::table('patients')
+                ->join('departments', 'patients.department_id', '=', 'departments.id')
+                ->join('doctors', 'patients.doctor_id', '=', 'doctors.id')
+                ->select('patients.*', 'doctors.doctor_name', 'departments.department_name')
+                ->get();
+        }
         return view('patients.allpatients', $data);
     }
 
@@ -95,7 +94,7 @@ class PatientsController extends Controller
         $user->email = $request->patient_email;
         $user->password = base64_encode($request->patient_password);
         $user->roleid = 1;
-         $user->save();
+        $user->save();
         return redirect()->route('allpatients')->with('SuccessFull', 'Data Was Successfull Updated');
     }
     public function delete(Request $request)

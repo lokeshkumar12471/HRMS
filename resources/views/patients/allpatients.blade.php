@@ -27,8 +27,8 @@
             <!-- Widget Item -->
             <div class="col-md-12">
                 <?php if(session()->get('roleid') == '3'){ ?>
-<a href="{{ route('patientcreate') }}" class="btn btn-danger mt-3 mb-0 text-end">Add</a>
-  <?php }?>
+                <a href="{{ route('patientcreate') }}" class="btn btn-danger mt-3 mb-0 text-end">Add</a>
+                <?php }?>
                 <div class="widget-area-2 proclinic-box-shadow">
                     <h3 class="widget-title">Patients List</h3>
                     <div class="table-responsive mb-3">
@@ -68,14 +68,13 @@
                                         <td><img src="{{ asset('uploads/patient/' . $patients->patient_profile) }}"
                                                 height="100" width="100"></td>
 
-                                                   <?php if(session()->get('roleid') == '3'){ ?>
+                                        <?php if(session()->get('roleid') == '3'){ ?>
                                         <td>
                                             <a href="{{ route('patientdetails', $patients->id) }}"><button
                                                     type="button" class="btn btn-primary mt-3 mb-0"><span
                                                         class="ti-pencil-alt"></span>
                                                     History</button></a>
-                                                    <button type="button"
-                                                class="btn btn-danger mt-3 mb-0 patientdelete"
+                                            <button type="button" class="btn btn-danger mt-3 mb-0 patientdelete"
                                                 data-id="{{ $patients->id }}"><span class="ti-trash"></span>
                                                 DELETE</button>
                                             <button type="button" class="btn btn-success mt-3 mb-0 editApp"
@@ -84,8 +83,8 @@
                                                 <span class="ti-pencil-alt"></span>Edit
                                             </button>
 
-                                          </td>
-                                            <?php } ?>
+                                        </td>
+                                        <?php } ?>
                                 @endforeach
                                 </tr>
                             </tbody>
@@ -97,14 +96,6 @@
         </div>
     </div>
     <!-- /Main Content -->
-
-
-
-
-
-
-
-
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"

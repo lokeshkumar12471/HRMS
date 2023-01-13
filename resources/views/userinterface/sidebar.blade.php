@@ -9,13 +9,13 @@
                 <span class="ti-home"></span> Dashboard
             </a>
         </li>
-           <?php if(session()->get('roleid')=='3'){?>
+        <?php if(session()->get('roleid')=='3'){?>
         <li>
             <a href="{{ route('allpatients') }}" aria-expanded="#">
                 <span class="ti-wheelchair"></span> Patients
             </a>
         </li>
-    <?php } ?>
+        <?php } ?>
         <?php if(session()->get('roleid')=='3'){?><li>
             <a href="{{ route('alldoctors') }}" aria-expanded="#">
                 <span class="ti-user"></span> Doctors
@@ -39,7 +39,7 @@
             </a>
         </li>
         <?php }?>
-          <?php if(session()->get('roleid')=='3'){?>
+        <?php if(session()->get('roleid')=='3'){?>
         <li>
             <a href="#nav-payment" data-toggle="collapse" aria-expanded="false">
                 <span class="ti-money"></span> Payments
@@ -112,12 +112,12 @@
             <a href="{{ route('roomtype') }}">System Parameters</a>
         </li>
     </ul>
-        <li>
-            <a href="{{ route('roomtype') }}">Backup Database</a>
-        </li>
-        <li>
-            <a href="{{ route('roomtype') }}">System Pages</a>
-        </li>
+    <li>
+        <a href="{{ route('roomtype') }}">Backup Database</a>
+    </li>
+    <li>
+        <a href="{{ route('roomtype') }}">System Pages</a>
+    </li>
     </li>
     <li>
         <a href="{{ route('allrooms') }}" aria-expanded="#">
@@ -131,7 +131,7 @@
     </li>
     <li>
         <a href="{{ route('alluserpermission') }}" aria-expanded="#">
-            <span class="ti-magnet"></span> Permissions
+            <span class="ti-panel"></span> Permissions
         </a>
     </li>
     <li>
@@ -151,11 +151,25 @@
         </ul>
     </li>
     <?php } ?>
-        <li>
-            <a href="{{ route('logout') }}" aria-expanded="#">
-                <span class="ti-magnet"></span> Logout
-            </a>
-        </li>
+    <?php if(session()->get('roleid')=='1') {?>
+    <li>
+        <a href="{{ route('patient') }}" aria-expanded="#">
+            <span class="ti-mobile"></span> Message
+        </a>
+    </li>
+    <?php }?>
+    <?php if(session()->get('roleid')=='2') {?>
+    <li>
+        <a href="{{ route('doctor') }}" aria-expanded="#">
+            <span class="ti-mobile"></span> Message
+        </a>
+    </li>
+    <?php }?>
+    <li>
+        <a href="{{ route('logout') }}" aria-expanded="#">
+            <span class="ti-cloud-down"></span> Logout
+        </a>
+    </li>
     </ul>
 </nav>
 <!-- /Sidebar -->

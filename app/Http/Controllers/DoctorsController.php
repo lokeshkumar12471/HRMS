@@ -56,7 +56,7 @@ class DoctorsController extends Controller
         $user->email = $request->doctor_email;
         $user->password = base64_encode($request->doctor_password);
         $user->roleid = 2;
-         $user->save();
+        $user->save();
         return redirect()->route('alldoctors')->with('Successfull', 'Data Successfully Updated');
     }
     public function getdoctorbyid(Request $request)
